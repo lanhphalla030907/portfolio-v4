@@ -58,4 +58,4 @@ All data is centrally managed and typed in [`src/data/portfolioData.ts`](./src/d
 - **Skills**: Add or modify tech stacks across the 3 pillars.
 - **Projects**: Add project titles, categories, images, summaries, and GitHub/Live URLs.
 - **Education & Achievements**: Update academic degrees and hackathon/award highlights.
-- **Contact & Socials**: Configure email, LinkedIn, GitHub, and Twitter/X links.
+- **Contact & Socials**: Configure email, GitHub, Facebook, and Telegram links.

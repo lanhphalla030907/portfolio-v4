@@ -4,9 +4,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { portfolioData } from "@/data/portfolioData";
 import {
   ArrowUpRight,
+  Facebook,
   Github,
-  Linkedin,
-  Twitter,
+  Send,
   MapPin,
   Briefcase,
   GraduationCap,
@@ -179,7 +179,7 @@ const stats = [
 
           {/* BASE LAYER: Full image (Real photo by default, or Suit when Aura button clicked) */}
           <img
-            src={isManualAura ? "/img/lanh-real.png" : "/img/lanh-aura.png"}
+            src={isManualAura ? "/img/image.png" : "/img/lanh-aura.png"}
             alt="Lanh Phalla - Developer Portrait"
             className="layer-base absolute inset-0 w-full h-full object-contain select-none transition-all duration-500 ease-out"
             style={{
@@ -201,7 +201,7 @@ const stats = [
             }}
           >
             <img
-              src={isManualAura ? "/img/lanh-aura.png" : "/img/lanh-real.png"}
+              src={isManualAura ? "/img/lanh-aura.png" : "/img/image.png"}
               alt="Lanh Phalla - Partial Reveal"
               className="layer-peek absolute inset-0 w-full h-full object-contain select-none"
               style={{
@@ -317,7 +317,7 @@ const stats = [
           <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
 
-        {/* Right: Social Channels */}
+        {/* Right: Social Links */}
         <div className="hero-socials justify-self-end flex items-center gap-6 text-xs uppercase tracking-[0.06em]">
           <a
             href={portfolioData.contact.github}
@@ -329,22 +329,22 @@ const stats = [
             <span className="hidden sm:inline">GitHub</span>
           </a>
           <a
-            href={portfolioData.contact.linkedin}
+            href={portfolioData.contact.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 hover:opacity-100 hover:text-ink transition-all no-underline flex items-center gap-2"
           >
-            <Linkedin className="w-[15px] h-[15px]" />
-            <span className="hidden sm:inline">LinkedIn</span>
+            <Facebook className="w-[15px] h-[15px]" />
+            <span className="hidden sm:inline">Facebook</span>
           </a>
           <a
-            href={portfolioData.contact.twitter}
+            href={portfolioData.contact.telegram}
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 hover:opacity-100 hover:text-ink transition-all no-underline flex items-center gap-2"
           >
-            <Twitter className="w-[15px] h-[15px]" />
-            <span className="hidden sm:inline">Twitter</span>
+            <Send className="w-[15px] h-[15px]" />
+            <span className="hidden sm:inline">Telegram</span>
           </a>
         </div>
       </div>

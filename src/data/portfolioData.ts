@@ -210,27 +210,35 @@ export const portfolioData = {
       githubUrl: "#",
       featured: true,
     },
-
     {
-      id: "zenith-ui",
-      title: "Zenith Design System",
-      category: "UI/UX & Component Architecture",
-      year: "2025",
+      id: "teasjul",
+      title: "TeasJul — Room Rental Management System",
+      category: "Full-Stack Web Application",
+      year: "2026",
       summary:
-        "Accessible, atomic component library with brutalist aesthetic tokens.",
+        "A full-stack rental management platform for managing houses, rooms, tenants, rental contracts, utilities, invoices, and payments.",
       description:
-        "Created an open-source design system adopted by 12+ internal micro-frontends, featuring strict WCAG 2.1 AA compliance, theme variables, and zero-runtime CSS footprint.",
+        "Developed a full-stack Room Rental Management System that helps property owners and managers manage rental operations through a centralized platform. Features include house and room management, tenant management, rental contracts, utility tracking, automated monthly invoicing, partial payments, PayWay KHQR integration, role-based access control, dashboards, and PDF reports. Built with React, TypeScript, Spring Boot, Java, and MySQL.",
       tags: [
         "React",
         "TypeScript",
-        "Tailwind CSS",
-        "Storybook",
-        "Accessibility",
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Spring Security",
+        "JWT",
+        "Full-Stack Development",
       ],
-      image:
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
-      liveUrl: "https://example.com/zenith-ui",
-      githubUrl: "https://github.com/example/zenith-ui",
+      image: "/project/teasjul.png",
+      images: [
+        "/project/teasjul/t1.jpg",
+        "/project/teasjul/t2.jpg",
+        "/project/teasjul/t3.jpg",
+        "/project/teasjul/t4.jpg",
+        "/project/teasjul/t5.jpg",
+      ],
+      liveUrl: "no",
+      githubUrl: "YOUR_TEASJUL_GITHUB_URL",
       featured: true,
     },
     {
@@ -282,31 +290,32 @@ export const portfolioData = {
         "Command-line utility and GitHub Action that audits multi-stage Docker builds, scans dependency SBOMs against CVE databases, and alerts engineering teams via Webhooks.",
       tags: ["Python", "Docker API", "GitHub Actions", "CLI", "Security"],
       image:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+        "/project/portfoliov3.png",
       liveUrl: "https://example.com/pulse-guard",
       githubUrl: "https://github.com/example/pulse-guard",
       featured: false,
     },
   ] as Project[],
 
-  education: [
-    {
-      id: "edu-1",
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of California, Berkeley",
-      location: "Berkeley, CA",
-      period: "2020 — 2024",
-      description:
-        "Dean's Honors List. Concentrated in Systems Architecture, Distributed Operating Systems, and Machine Learning.",
-      highlights: [
-        "Head Teaching Assistant for CS61B (Data Structures & Algorithms)",
-        "Published undergraduate research on Byzantine fault-tolerant consensus",
-        "President of the Berkeley Open Source Software Society",
-      ],
-    },
-  ] as Education[],
-
-  // Replace these sample credentials with your own certificate details.
+ 
+education: [
+  {
+    id: "edu-1",
+    degree: "Bachelor's Degree in Computer Science",
+    institution: "Royal University of Phnom Penh",
+    location: "Phnom Penh, Cambodia",
+    period: "2025 — Present", // Verify enrollment year
+    description:
+      "Third-year Computer Science student building a strong foundation in software engineering, algorithms, database systems, computer networking, and full-stack web development.",
+    highlights: [
+      "Data Structures, Algorithms, and Object-Oriented Programming",
+      "Database Systems Design, SQL, and Database Management",
+      "Computer Networking, Network Security, and System Administration",
+      "Full-Stack Web Development with Frontend and Backend Technologies",
+      "Software Engineering, Information Systems Analysis, and Design",
+    ],
+  },
+] as Education[],
 
   certificates: [
     {
@@ -424,10 +433,10 @@ export const portfolioData = {
     heading: "Let's work together.",
     subheading:
       "Available for engineering roles, technical advisory, and high-impact software projects.",
-    email: "alexander.chen.dev@example.com",
-    github: "https://github.com/example",
-    linkedin: "https://linkedin.com/in/example",
-    twitter: "https://twitter.com/example",
-    location: "San Francisco, CA / Remote",
+    email: "phallalanh9@gmail.com",
+    github: "https://github.com/lanhphalla030907",
+    facebook: "https://www.facebook.com/share/1T8gp5UERJ/?mibextid=wwXIfr",
+    telegram: "https://t.me/lanhphalla03",
+    location: "Phnom Penh, Cambodia",
   },
 };

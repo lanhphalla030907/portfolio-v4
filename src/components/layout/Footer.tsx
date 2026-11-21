@@ -1,6 +1,6 @@
 import React from "react";
 import { portfolioData } from "@/data/portfolioData";
-import { ArrowUpRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowUpRight, Facebook, Github, Mail, Send } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -44,12 +44,12 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Social Channels & Links Column */}
+          {/* Social Links Column */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-8 reveal-on-scroll" data-delay="150">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-4">
-                  Channels
+                  Social
                 </h4>
                 <ul className="space-y-3 font-mono text-sm">
                   <li>
@@ -66,25 +66,25 @@ export const Footer: React.FC = () => {
                   </li>
                   <li>
                     <a
-                      href={portfolioData.contact.linkedin}
+                      href={portfolioData.contact.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-slate-300 hover:text-brand-accent transition-colors flex items-center gap-2"
                     >
-                      <Linkedin className="w-4 h-4" />
-                      <span>LinkedIn</span>
+                      <Facebook className="w-4 h-4" />
+                      <span>Facebook</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
                     </a>
                   </li>
                   <li>
                     <a
-                      href={portfolioData.contact.twitter}
+                      href={portfolioData.contact.telegram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-slate-300 hover:text-brand-accent transition-colors flex items-center gap-2"
                     >
-                      <Twitter className="w-4 h-4" />
-                      <span>Twitter / X</span>
+                      <Send className="w-4 h-4" />
+                      <span>Telegram</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
                     </a>
                   </li>
