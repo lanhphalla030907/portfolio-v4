@@ -241,22 +241,32 @@ export const portfolioData = {
       githubUrl: "YOUR_TEASJUL_GITHUB_URL",
       featured: true,
     },
+
     {
-      id: "omni-scribe",
-      title: "OmniScribe AI Workspace",
-      category: "Productivity & Semantic Search",
-      year: "2025",
+      id: "pos-pharmacy",
+      title: "POS Pharmacy Management System",
+      category: "Business Management & Healthcare",
+      year: "2026",
       summary:
-        "Knowledge management tool with local-first vector search and RAG synthesis.",
+        "Full-stack pharmacy management platform for inventory control, sales processing, and business analytics.",
       description:
-        "Developed a modern note-taking application powered by embedded local embeddings and cloud LLM synthesis, enabling instant semantic search over 100k+ personal documents.",
-      tags: ["Next.js", "LangChain", "OpenAI API", "Pinecone", "Tailwind"],
+        "Developed a pharmacy management system with Laravel and React, enabling efficient medicine inventory tracking, point-of-sale transactions, supplier management, and sales reporting. Implemented JWT authentication, database transactions for inventory consistency, and an analytics dashboard for monitoring pharmacy operations.",
+      tags: [
+        "React 18",
+        "Laravel 10",
+        "MySQL 8",
+        "Tailwind CSS",
+        "Chart.js",
+        "RESTful API",
+        "JWT Authentication",
+      ],
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-      liveUrl: "https://example.com/omni-scribe",
-      githubUrl: "https://github.com/example/omni-scribe",
+        "/project/pharmacy.png",
+      liveUrl: "",
+      githubUrl: "",
       featured: true,
     },
+
     {
       id: "kinetic-3d",
       title: "Kinetic Interactive Showcase",
@@ -289,33 +299,31 @@ export const portfolioData = {
       description:
         "Command-line utility and GitHub Action that audits multi-stage Docker builds, scans dependency SBOMs against CVE databases, and alerts engineering teams via Webhooks.",
       tags: ["Python", "Docker API", "GitHub Actions", "CLI", "Security"],
-      image:
-        "/project/portfoliov3.png",
+      image: "/project/portfoliov3.png",
       liveUrl: "https://example.com/pulse-guard",
       githubUrl: "https://github.com/example/pulse-guard",
       featured: false,
     },
   ] as Project[],
 
- 
-education: [
-  {
-    id: "edu-1",
-    degree: "Bachelor's Degree in Computer Science",
-    institution: "Royal University of Phnom Penh",
-    location: "Phnom Penh, Cambodia",
-    period: "2025 — Present", // Verify enrollment year
-    description:
-      "Third-year Computer Science student building a strong foundation in software engineering, algorithms, database systems, computer networking, and full-stack web development.",
-    highlights: [
-      "Data Structures, Algorithms, and Object-Oriented Programming",
-      "Database Systems Design, SQL, and Database Management",
-      "Computer Networking, Network Security, and System Administration",
-      "Full-Stack Web Development with Frontend and Backend Technologies",
-      "Software Engineering, Information Systems Analysis, and Design",
-    ],
-  },
-] as Education[],
+  education: [
+    {
+      id: "edu-1",
+      degree: "Bachelor's Degree in Computer Science",
+      institution: "Royal University of Phnom Penh",
+      location: "Phnom Penh, Cambodia",
+      period: "2025 — Present", // Verify enrollment year
+      description:
+        "Third-year Computer Science student building a strong foundation in software engineering, algorithms, database systems, computer networking, and full-stack web development.",
+      highlights: [
+        "Data Structures, Algorithms, and Object-Oriented Programming",
+        "Database Systems Design, SQL, and Database Management",
+        "Computer Networking, Network Security, and System Administration",
+        "Full-Stack Web Development with Frontend and Backend Technologies",
+        "Software Engineering, Information Systems Analysis, and Design",
+      ],
+    },
+  ] as Education[],
 
   certificates: [
     {

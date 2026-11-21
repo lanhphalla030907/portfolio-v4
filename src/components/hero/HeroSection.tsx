@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { portfolioData } from "@/data/portfolioData";
 import {
   ArrowUpRight,
@@ -23,33 +23,101 @@ export const HeroSection: React.FC = () => {
   const [isManualAura, setIsManualAura] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const portraitRef = useRef<HTMLDivElement | null>(null);
+  const lensRef = useRef<HTMLDivElement | null>(null);
+  const lensImageRef = useRef<HTMLImageElement | null>(null);
+  const ringRef = useRef<HTMLDivElement | null>(null);
+
+  // Input events only record the latest coordinates. A single rAF applies them
+  // once per displayed frame, so a 120Hz touch screen can no longer trigger
+  // multiple layout reads and full-image repaints between two painted frames.
+  const scanRef = useRef({
+    frame: 0,
+    point: null as { x: number; y: number } | null,
+    rect: null as DOMRect | null,
+    scrollY: 0,
+    radius: 64,
+  });
+
+  // Measured once per interaction instead of on every pointer/touch move.
+  const measurePortrait = useCallback(() => {
+    const portrait = portraitRef.current;
+    if (!portrait) return;
+
+    const scan = scanRef.current;
+    scan.rect = portrait.getBoundingClientRect();
+    scan.scrollY = window.scrollY;
+
+    const radius = Number.parseFloat(
+      window.getComputedStyle(portrait).getPropertyValue("--scan-radius"),
+    );
+    scan.radius = Number.isFinite(radius) && radius > 0 ? radius : 64;
+
+    // The reveal image must be the exact size of the portrait so the two
+    // layers stay aligned while the small lens moves across them.
+    if (lensImageRef.current) {
+      lensImageRef.current.style.width = `${scan.rect.width}px`;
+      lensImageRef.current.style.height = `${scan.rect.height}px`;
+    }
+  }, []);
 
   useEffect(() => {
     setMounted(true);
+    measurePortrait();
+    window.addEventListener("resize", measurePortrait);
+    window.addEventListener("orientationchange", measurePortrait);
+
+    return () => {
+      window.removeEventListener("resize", measurePortrait);
+      window.removeEventListener("orientationchange", measurePortrait);
+      if (scanRef.current.frame) cancelAnimationFrame(scanRef.current.frame);
+    };
+  }, [measurePortrait]);
+
+  // Only transforms change here. They are composited by the GPU, so the
+  // browser never has to repaint the large portrait while the scan moves.
+  const renderScan = useCallback(() => {
+    const scan = scanRef.current;
+    scan.frame = 0;
+
+    const point = scan.point;
+    const rect = scan.rect;
+    const lens = lensRef.current;
+    const lensImage = lensImageRef.current;
+    const ring = ringRef.current;
+    if (!point || !rect || !lens || !lensImage || !ring) return;
+
+    // rect is cached from pointerenter/touchstart; compensate for page scroll
+    // that happens while the finger is still dragging across the portrait.
+    const x = point.x - rect.left;
+    const y = point.y - rect.top + (window.scrollY - scan.scrollY);
+    const r = scan.radius;
+    const lensTransform = `translate3d(${(x - r).toFixed(1)}px, ${(y - r).toFixed(1)}px, 0)`;
+    const imageTransform = `translate3d(${(r - x).toFixed(1)}px, ${(r - y).toFixed(1)}px, 0) translateY(0.8%)`;
+
+    lens.style.transform = lensTransform;
+    ring.style.transform = lensTransform;
+    lensImage.style.transform = imageTransform;
   }, []);
 
-  // Keeps the scan mask + ring in sync with the input position.
-  const updateScanPosition = (clientX: number, clientY: number) => {
-    const portrait = portraitRef.current;
-    if (!portrait) return;
-    const rect = portrait.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
-    portrait.style.setProperty("--mouse-x", `${x.toFixed(1)}px`);
-    portrait.style.setProperty("--mouse-y", `${y.toFixed(1)}px`);
+  const scheduleScan = (clientX: number, clientY: number) => {
+    const scan = scanRef.current;
+    scan.point = { x: clientX, y: clientY };
+    if (scan.frame) return;
+    scan.frame = requestAnimationFrame(renderScan);
   };
 
   // Pointer events cover mouse / stylus hover. Touch is handled separately so
   // the scan keeps tracking even while the finger scrolls the page.
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType === "touch") return;
-    updateScanPosition(e.clientX, e.clientY);
+    scheduleScan(e.clientX, e.clientY);
   };
 
   const handlePointerEnter = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType === "touch") return;
+    measurePortrait();
     setIsHovered(true);
-    handlePointerMove(e);
+    scheduleScan(e.clientX, e.clientY);
   };
 
   const handlePointerLeave = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -60,10 +128,11 @@ export const HeroSection: React.FC = () => {
   const handleTouch = (e: React.TouchEvent<HTMLDivElement>) => {
     const touch = e.touches[0] ?? e.changedTouches[0];
     if (!touch) return;
-    updateScanPosition(touch.clientX, touch.clientY);
+    scheduleScan(touch.clientX, touch.clientY);
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    measurePortrait();
     setIsHovered(true);
     handleTouch(e);
   };
@@ -72,7 +141,7 @@ export const HeroSection: React.FC = () => {
     setIsHovered(false);
   };
 
-  
+
 const stats = [
   {
     value: "6+",
@@ -194,8 +263,10 @@ const stats = [
           style={{
             aspectRatio: "946 / 883",
             height: "calc(100% - 64px)",
-            ["--mouse-x" as string]: "50%",
-            ["--mouse-y" as string]: "50%",
+            // Let the browser scroll immediately on vertical drags instead of
+            // waiting to see whether the gesture is a tap or a scroll.
+            touchAction: "pan-y",
+            WebkitTapHighlightColor: "transparent",
           }}
         >
           {/* Ambient luminous glow when full aura is active */}
@@ -211,29 +282,36 @@ const stats = [
           <img
             src={isManualAura ? "/img/image.png" : "/img/lanh-aura.png"}
             alt="Lanh Phalla - Developer Portrait"
-            className="layer-base absolute inset-0 w-full h-full object-contain select-none transition-all duration-500 ease-out"
+            className="layer-base absolute inset-0 w-full h-full object-contain select-none transition-[filter] duration-500 ease-out"
             style={{
               transform: "translateY(0.8%)",
               filter: isManualAura ? "drop-shadow(0 0 25px rgba(0,0,0,0.5))" : "none",
             }}
           />
 
-          {/* PARTIAL HOVER PEEK LAYER: Transforms ONLY the area directly under the cursor */}
+          {/* PARTIAL HOVER PEEK LAYER: a small circular "lens" whose only
+              changing property is transform. The static mask fades its edge,
+              and the image inside is offset to stay aligned with the base. */}
           <div
-            className={`layer-peek-container absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-300 ease-out ${
+            ref={lensRef}
+            aria-hidden="true"
+            className={`absolute top-0 left-0 overflow-hidden rounded-full pointer-events-none transition-opacity duration-300 ease-out ${
               isHovered ? "opacity-100" : "opacity-0"
             }`}
             style={{
-              WebkitMaskImage:
-                "radial-gradient(circle var(--scan-radius) at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 65%, transparent 100%)",
-              maskImage:
-                "radial-gradient(circle var(--scan-radius) at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 65%, transparent 100%)",
+              width: "var(--scan-ring-size)",
+              height: "var(--scan-ring-size)",
+              transform: "translate3d(-9999px, -9999px, 0)",
+              willChange: "transform, opacity",
+              WebkitMaskImage: "radial-gradient(circle at center, black 65%, transparent 100%)",
+              maskImage: "radial-gradient(circle at center, black 65%, transparent 100%)",
             }}
           >
             <img
+              ref={lensImageRef}
               src={isManualAura ? "/img/lanh-aura.png" : "/img/image.png"}
-              alt="Lanh Phalla - Partial Reveal"
-              className="layer-peek absolute inset-0 w-full h-full object-contain select-none"
+              alt=""
+              className="absolute top-0 left-0 max-w-none object-contain select-none"
               style={{
                 transform: "translateY(0.8%)",
                 filter: !isManualAura ? "drop-shadow(0 0 25px rgba(0,0,0,0.5))" : "none",
@@ -241,20 +319,25 @@ const stats = [
             />
           </div>
 
-          {/* Clean Soft Cursor Subtle Light Ring */}
+          {/* Clean Soft Cursor Subtle Light Ring (transform-only movement) */}
           <div
-            className={`absolute pointer-events-none transition-all duration-150 ease-out ${
-              isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75"
+            ref={ringRef}
+            aria-hidden="true"
+            className={`absolute top-0 left-0 pointer-events-none transition-opacity duration-200 ease-out ${
+              isHovered ? "opacity-100" : "opacity-0"
             }`}
             style={{
-              left: "var(--mouse-x, 50%)",
-              top: "var(--mouse-y, 50%)",
-              transform: "translate(-50%, -50%)",
               width: "var(--scan-ring-size)",
               height: "var(--scan-ring-size)",
+              transform: "translate3d(-9999px, -9999px, 0)",
+              willChange: "transform, opacity",
             }}
           >
-            <div className="w-full h-full rounded-full border border-line/30 shadow-[0_0_20px_rgba(0,0,0,0.15)]" />
+            <div
+              className={`w-full h-full rounded-full border border-line/30 shadow-[0_0_20px_rgba(0,0,0,0.15)] transition-transform duration-200 ease-out ${
+                isHovered ? "scale-100" : "scale-75"
+              }`}
+            />
           </div>
         </div>
       </div>
@@ -457,7 +540,11 @@ const stats = [
             line-height: 0.9 !important;
           }
           .hero-portrait {
-            width: min(100%, 420px, 46svh) !important;
+            /* Width must not depend on viewport height. Mobile browsers fire
+               resize events as the address bar hides/shows during scrolling,
+               and a vh/svh-based width makes the portrait resize mid-scroll.
+               vw is stable because the visual viewport width never changes. */
+            width: min(90vw, 420px) !important;
             --scan-radius: 84px;
             --scan-ring-size: 168px;
           }

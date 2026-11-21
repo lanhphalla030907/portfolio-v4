@@ -68,9 +68,7 @@ export const ProjectsSection: React.FC = () => {
 
                   {/* Corner Badges */}
                   <div className="absolute top-3 left-3 z-10 flex items-center gap-2">
-                    <span className="px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase bg-night/80 backdrop-blur-sm text-white rounded-sm border border-white/20">
-                      {project.category}
-                    </span>
+                   
                     {project.featured && (
                       <span className="px-2 py-0.5 text-[10px] font-mono tracking-widest uppercase bg-brand-yellow text-night font-bold rounded-sm flex items-center gap-1">
                         <Sparkles className="w-2.5 h-2.5" />
@@ -106,7 +104,7 @@ export const ProjectsSection: React.FC = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 text-[10px] font-mono tracking-wider uppercase bg-paper border border-line/8 text-ink-soft rounded-sm"
+                        className="px-2 py-0.5 text-[10px] font-mono tracking-wider uppercase bg-paper dark:bg-white/5 border border-line/8 dark:border-line/20 text-ink-soft rounded-sm"
                       >
                         {tag}
                       </span>
@@ -116,12 +114,12 @@ export const ProjectsSection: React.FC = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="p-6 pt-0 border-t border-line/8 mt-4 flex items-center justify-between">
+              <div className="p-6 pt-3 border-t border-line/8 dark:border-line/20 mt-6 flex items-center justify-between">
                 <Link
                   href={`/projects/${project.id}`}
                   className="text-xs font-mono font-semibold uppercase tracking-wider text-ink hover:text-accentText transition-colors flex items-center gap-1.5"
                 >
-                  <span>Architecture Details</span>
+                  <span>View Details</span>
                   <Code className="w-3.5 h-3.5" />
                 </Link>
 
@@ -143,7 +141,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="cut-corner-sm px-3.5 py-1.5 bg-night text-white hover:bg-brand-accent hover:text-night font-mono text-xs uppercase tracking-wider font-semibold transition-all inline-flex items-center gap-1.5"
+                      className="cut-corner-sm px-3.5 py-1.5 bg-night text-white hover:bg-brand-accent hover:text-night dark:bg-brand-accent dark:text-night dark:hover:bg-brand-accentHover font-mono text-xs uppercase tracking-wider font-semibold transition-all inline-flex items-center gap-1.5"
                     >
                       <span>Live Site</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />

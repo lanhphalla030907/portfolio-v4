@@ -177,9 +177,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                   {project.tags.map((tag, tagIndex) => (
                     <div
                       key={tag}
-                      className="group flex items-center gap-3 cut-corner-sm border border-line/10 bg-surface p-4 transition-all hover:border-brand-accent/50 hover:shadow-xs"
+                      className="group flex items-center gap-3 cut-corner-sm border border-line/10 dark:border-line/25 bg-surface dark:bg-white/[0.04] p-4 transition-all hover:border-brand-accent/50 hover:shadow-xs"
                     >
-                      <span className="font-mono text-[10px] text-ink-light">
+                      <span className="font-mono text-[10px] text-ink-light dark:text-ink-soft">
                         {String(tagIndex + 1).padStart(2, "0")}
                       </span>
                       <span className="font-mono text-sm font-semibold text-ink transition-colors group-hover:text-accentText">

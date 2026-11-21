@@ -38,7 +38,7 @@ export const SkillsSection: React.FC = () => {
               <div
                 key={category.title}
                 data-delay={idx * 100}
-                className="reveal-on-scroll bg-surface border border-line/10 cut-corner-md p-5 sm:p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                className="reveal-on-scroll bg-surface border border-line/10 dark:border-line/20 dark:bg-white/[0.03] cut-corner-md p-5 sm:p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Category Header */}
@@ -65,7 +65,7 @@ export const SkillsSection: React.FC = () => {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex items-center gap-3 p-2 rounded-sm bg-paper/60 hover:bg-paper border border-line/8 hover:border-brand-accent/40 transition-colors group"
+                        className="flex items-center gap-3 p-2 rounded-sm bg-paper/60 hover:bg-paper dark:bg-white/5 dark:hover:bg-white/10 border border-line/8 dark:border-line/20 hover:border-brand-accent/40 transition-colors group"
                       >
                         <div className="w-5 h-5 shrink-0 flex items-center justify-center">
                           {skill.icon ? (
@@ -89,7 +89,7 @@ export const SkillsSection: React.FC = () => {
                 </div>
 
                 {/* Bottom Architectural Rule */}
-                <div className="mt-6 pt-3.5 border-t border-line/10 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                <div className="mt-6 pt-3.5 border-t border-line/10 dark:border-line/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
                   <span className="flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5 text-accentText" />
                     <span>Verified</span>

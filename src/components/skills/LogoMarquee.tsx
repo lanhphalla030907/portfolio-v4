@@ -19,7 +19,7 @@ const LogoGroup: React.FC<{ hidden?: boolean }> = ({ hidden = false }) => {
       {skills.map((skill) => (
         <div
           key={skill.name}
-          className="flex items-center gap-2.5 rounded-lg border border-line/10 bg-surface px-3.5 py-2.5 shadow-xs"
+          className="flex items-center gap-2.5 rounded-lg border border-line/10 dark:border-line/25 bg-surface dark:bg-white/[0.04] px-3.5 py-2.5 shadow-xs"
         >
           <img
             src={skill.icon}
