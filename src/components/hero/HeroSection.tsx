@@ -195,9 +195,9 @@ const stats = [
             }`}
             style={{
               WebkitMaskImage:
-                "radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 65%, transparent 100%)",
+                "radial-gradient(circle var(--scan-radius) at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 65%, transparent 100%)",
               maskImage:
-                "radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 65%, transparent 100%)",
+                "radial-gradient(circle var(--scan-radius) at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 65%, transparent 100%)",
             }}
           >
             <img
@@ -220,8 +220,8 @@ const stats = [
               left: "var(--mouse-x, 50%)",
               top: "var(--mouse-y, 50%)",
               transform: "translate(-50%, -50%)",
-              width: "280px",
-              height: "280px",
+              width: "var(--scan-ring-size)",
+              height: "var(--scan-ring-size)",
             }}
           >
             <div className="w-full h-full rounded-full border border-line/30 shadow-[0_0_20px_rgba(0,0,0,0.15)]" />
@@ -351,6 +351,11 @@ const stats = [
 
       {/* ═══ RESPONSIVE MOBILE OVERRIDES ═══ */}
       <style jsx>{`
+        /* Cursor scan sizes (desktop defaults) */
+        .hero-portrait {
+          --scan-radius: 140px;
+          --scan-ring-size: 280px;
+        }
         @media (max-width: 1024px) {
           .hero {
             height: auto !important;
@@ -382,6 +387,8 @@ const stats = [
             height: auto !important;
             aspect-ratio: 946 / 883;
             margin: 0 auto;
+            --scan-radius: 110px;
+            --scan-ring-size: 220px;
           }
           .hero-panels {
             display: grid !important;
@@ -416,6 +423,8 @@ const stats = [
           }
           .hero-portrait {
             width: min(100%, 420px, 46svh) !important;
+            --scan-radius: 84px;
+            --scan-ring-size: 168px;
           }
           .hero-panels {
             grid-template-columns: 1fr !important;
@@ -425,6 +434,12 @@ const stats = [
           .hero-bar {
             gap: 16px !important;
             padding-top: 20px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-portrait {
+            --scan-radius: 64px;
+            --scan-ring-size: 128px;
           }
         }
       `}</style>
