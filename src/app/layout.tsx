@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Alexander Chen | Full-Stack Engineer & Systems Architect",
+  title: "Lanh Phalla | Full-Stack Deverloper",
   description:
-    "Personal portfolio of Alexander Chen — Full-Stack Engineer specializing in high-performance distributed systems, modern web architecture, and accessible UI/UX design.",
+    "Personal portfolio of Lanh Phalla — Full-Stack Deverloper specializing in high-performance distributed systems, modern web architecture, and accessible UI/UX design.",
   keywords: [
-    "Full-Stack Engineer",
+    "Full-Stack Deverloper",
     "Systems Architect",
     "Next.js",
     "TypeScript",
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "Tailwind CSS",
     "Distributed Systems",
   ],
-  authors: [{ name: "Alexander Chen" }],
+  authors: [{ name: "Lanh Phalla" }],
   openGraph: {
-    title: "Alexander Chen | Full-Stack Engineer & Systems Architect",
+    title: "Lanh Phalla | Full-Stack Deverloper",
     description:
-      "Full-Stack Engineer specializing in high-performance distributed systems, modern web architecture, and accessible UI/UX design.",
+      "Full-Stack Deverloper specializing in high-performance distributed systems, modern web architecture, and accessible UI/UX design.",
     type: "website",
   },
 };
