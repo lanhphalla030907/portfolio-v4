@@ -209,11 +209,13 @@ body {
 
 /* ═══ THEME SWITCH ANIMATION ═══ */
 @media (prefers-reduced-motion: no-preference) {
-  *,
-  *::before,
-  *::after {
+  /* Smooth colour changes for browsers without View Transitions. They are
+     paused while the circular reveal runs so the two effects never fight. */
+  html:not(.theme-vt) *,
+  html:not(.theme-vt) *::before,
+  html:not(.theme-vt) *::after {
     transition-property: background-color, border-color, color, fill, stroke;
-    transition-duration: 0.35s;
+    transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
@@ -234,9 +236,17 @@ body {
 }
 
 ::view-transition-old(root) {
-  animation: theme-fade 0.25s ease both;
+  animation: theme-fade 0.3s ease both;
 }
 
 ::view-transition-new(root) {
-  animation: theme-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: theme-reveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* The toggle sits in its own group so the knob glides smoothly instead of
+   being sliced by the page-wide circular reveal. */
+::view-transition-old(theme-toggle),
+::view-transition-new(theme-toggle) {
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }

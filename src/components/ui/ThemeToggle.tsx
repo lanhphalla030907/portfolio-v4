@@ -50,10 +50,17 @@ export const ThemeToggle: React.FC = () => {
     ).matches;
 
     if (doc.startViewTransition && !reducedMotion) {
-      doc.startViewTransition(() => {
+      // Pause the global colour transitions while the reveal plays, otherwise
+      // every element animates twice and the switch feels laggy.
+      root.classList.add("theme-vt");
+      const transition = doc.startViewTransition(() => {
         flushSync(() => setTheme(next));
         applyTheme();
       });
+      void transition.finished.then(
+        () => root.classList.remove("theme-vt"),
+        () => root.classList.remove("theme-vt")
+      );
       return;
     }
 
@@ -69,6 +76,7 @@ export const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      style={{ ["viewTransitionName" as string]: "theme-toggle" }}
       className="relative flex h-9 w-[68px] shrink-0 items-center justify-between rounded-full border border-line/15 bg-surface/80 px-1.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-brand-accent/50 active:scale-95"
     >
       <span

@@ -27,7 +27,8 @@ const themeScript = `
 (function(){
   try{
     var saved = localStorage.getItem('portfolio-theme');
-    var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Light mode is the default. Only a previously saved dark preference opts in.
+    var dark = saved === 'dark';
     var root = document.documentElement;
     root.classList.toggle('dark', dark);
     root.style.colorScheme = dark ? 'dark' : 'light';

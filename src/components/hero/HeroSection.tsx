@@ -28,21 +28,47 @@ export const HeroSection: React.FC = () => {
     setMounted(true);
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!portraitRef.current) return;
-    const rect = portraitRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    portraitRef.current.style.setProperty("--mouse-x", `${x.toFixed(1)}px`);
-    portraitRef.current.style.setProperty("--mouse-y", `${y.toFixed(1)}px`);
+  // Keeps the scan mask + ring in sync with the input position.
+  const updateScanPosition = (clientX: number, clientY: number) => {
+    const portrait = portraitRef.current;
+    if (!portrait) return;
+    const rect = portrait.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    portrait.style.setProperty("--mouse-x", `${x.toFixed(1)}px`);
+    portrait.style.setProperty("--mouse-y", `${y.toFixed(1)}px`);
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  // Pointer events cover mouse / stylus hover. Touch is handled separately so
+  // the scan keeps tracking even while the finger scrolls the page.
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") return;
+    updateScanPosition(e.clientX, e.clientY);
+  };
+
+  const handlePointerEnter = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") return;
     setIsHovered(true);
-    handleMouseMove(e);
+    handlePointerMove(e);
   };
 
-  const handleMouseLeave = () => {
+  const handlePointerLeave = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") return;
+    setIsHovered(false);
+  };
+
+  const handleTouch = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.touches[0] ?? e.changedTouches[0];
+    if (!touch) return;
+    updateScanPosition(touch.clientX, touch.clientY);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsHovered(true);
+    handleTouch(e);
+  };
+
+  const handleTouchEnd = () => {
     setIsHovered(false);
   };
 
@@ -155,9 +181,13 @@ const stats = [
       <div className="hero-stage absolute inset-0 z-10 pointer-events-none">
         <div
           ref={portraitRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onMouseMove={handleMouseMove}
+          onPointerEnter={handlePointerEnter}
+          onPointerLeave={handlePointerLeave}
+          onPointerMove={handlePointerMove}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouch}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
           className={`hero-portrait pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-[-40px] cursor-crosshair transition-opacity duration-1000 ${
             mounted ? "opacity-100" : "opacity-0"
           }`}
@@ -299,7 +329,12 @@ const stats = [
               {isManualAura ? "Show portrait" : "Show aura"}
             </span>
             <span className="hero-mode-hint block text-[11px] text-ink-soft">
-              {isManualAura ? "Full aura active · Click to return" : "Hover to reveal part · Click for full suit"}
+              <span className="sm:hidden">
+                {isManualAura ? "Full aura active · Tap to return" : "Touch & drag to reveal · Tap for full suit"}
+              </span>
+              <span className="hidden sm:inline">
+                {isManualAura ? "Full aura active · Click to return" : "Hover to reveal part · Click for full suit"}
+              </span>
             </span>
           </span>
         </button>
