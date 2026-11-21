@@ -2,24 +2,42 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Lanh Phalla | Full-Stack Deverloper",
+  metadataBase: new URL("https://lanhphalla.dev"),
+
+  title: {
+    default: "Lanh Phalla | Full-Stack Developer",
+    template: "%s | Lanh Phalla",
+  },
+
   description:
-    "Personal portfolio of Lanh Phalla — Full-Stack Deverloper specializing in high-performance distributed systems, modern web architecture, and accessible UI/UX design.",
+    "Lanh Phalla is a Computer Science student and Full-Stack Developer from Cambodia, building modern web applications with Next.js, TypeScript, Node.js, and backend technologies.",
+
   keywords: [
-    "Full-Stack Deverloper",
-    "Systems Architect",
+    "Lanh Phalla",
+    "Lanh Phalla Developer",
+    "Full-Stack Developer Cambodia",
+    "Backend Developer Cambodia",
     "Next.js",
     "TypeScript",
-    "Three.js",
-    "Tailwind CSS",
-    "Distributed Systems",
+    "Node.js",
+    "Web Development",
   ],
+
   authors: [{ name: "Lanh Phalla" }],
+
   openGraph: {
-    title: "Lanh Phalla | Full-Stack Deverloper",
+    title: "Lanh Phalla | Full-Stack Developer",
     description:
-      "Full-Stack Deverloper specializing in high-performance distributed systems, modern web architecture, and accessible UI/UX design.",
+      "Explore the portfolio, projects, and technical work of Lanh Phalla, a Full-Stack Developer from Cambodia.",
+    url: "https://lanhphalla.dev",
+    siteName: "Lanh Phalla Portfolio",
     type: "website",
+    locale: "en_US",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
