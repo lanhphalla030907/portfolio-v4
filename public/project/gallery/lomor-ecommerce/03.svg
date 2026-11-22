@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="LOMOR / STOREFRONT">
+  
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1430"/>
+      <stop offset="100%" stop-color="#070b1c"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60C1E5" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#60C1E5" stop-opacity=".25"/>
+    </linearGradient>
+  </defs>
+  
+    <rect width="1280" height="800" fill="url(#bg)"/>
+    <rect width="1280" height="800" fill="url(#grid)" opacity=".5"/>
+    <rect x="0" y="0" width="1280" height="56" fill="#0d1430" stroke="#263259"/>
+    <path d="M27 14 H48 V35 L41 42 H20 V21 Z" fill="#60C1E5"/>
+    <text x="60" y="34" fill="#eef3f8" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0">LOMOR / STOREFRONT</text>
+    <rect x="470" y="14" width="340" height="28" rx="6" fill="#151f3d" stroke="#2a3558"/>
+    <text x="486" y="33" fill="#6f83a8" font-family="monospace" font-size="12" font-weight="400" letter-spacing="0">app.local / orders</text>
+    <circle cx="1210" cy="28" r="13" fill="#60C1E5" opacity=".85"/>
+    <circle cx="1244" cy="28" r="13" fill="#2a3558"/>
+    <rect x="0" y="56" width="200" height="744" fill="#0d1430" stroke="#263259"/>
+    
+      <rect x="16" y="84" width="168" height="34" rx="6" fill="#60C1E5" opacity="0.18"/>
+      <rect x="28" y="96" width="8" height="8" rx="2" fill="#60C1E5"/>
+      <text x="46" y="105" fill="#60C1E5" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Overview</text>
+      <rect x="16" y="130" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="142" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="151" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Catalog</text>
+      <rect x="16" y="176" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="188" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="197" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Orders</text>
+      <rect x="16" y="222" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="234" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="243" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Customers</text>
+      <rect x="16" y="268" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="280" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="289" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Reports</text>
+      <rect x="16" y="314" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="326" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="335" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Settings</text>
+    <rect x="16" y="716" width="168" height="60" rx="8" fill="#151f3d" stroke="#2a3558"/>
+    <circle cx="42" cy="746" r="13" fill="#60C1E5" opacity=".3"/>
+    <text x="64" y="742" fill="#c6d4e8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">ADMIN USER</text>
+    <text x="64" y="758" fill="#6f83a8" font-family="monospace" font-size="10" font-weight="400" letter-spacing="0">workspace</text>
+  
+  <path d="M244 84 H1252 V752 L1240 764 H232 V96 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+    <text x="254" y="122" fill="#eef3f8" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0">ORDER MANAGEMENT</text>
+    <text x="254" y="144" fill="#6f83a8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Live fulfillment queue</text>
+    <rect x="254" y="166" width="976" height="40" rx="6" fill="#1a2547"/>
+    <text x="270" y="192" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">ORDER ID</text><text x="430" y="192" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">CUSTOMER</text><text x="660" y="192" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">TOTAL</text><text x="900" y="192" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">STATUS</text><text x="1100" y="192" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">ACTION</text>
+    
+      <rect x="254" y="212" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="232" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.7"/>
+      <rect x="430" y="232" width="150" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="232" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="232" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="225" width="88" height="24" rx="12" fill="#ffd43b" opacity=".22"/>
+      <text x="1114" y="241" fill="#ffd43b" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">PENDING</text>
+      <rect x="254" y="276" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="296" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.6499999999999999"/>
+      <rect x="430" y="296" width="120" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="296" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="296" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="289" width="88" height="24" rx="12" fill="#60C1E5" opacity=".22"/>
+      <text x="1114" y="305" fill="#60C1E5" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">ACTIVE</text>
+      <rect x="254" y="340" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="360" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.6"/>
+      <rect x="430" y="360" width="90" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="360" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="360" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="353" width="88" height="24" rx="12" fill="#60C1E5" opacity=".22"/>
+      <text x="1114" y="369" fill="#60C1E5" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">ACTIVE</text>
+      <rect x="254" y="404" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="424" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.5499999999999999"/>
+      <rect x="430" y="424" width="150" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="424" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="424" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="417" width="88" height="24" rx="12" fill="#60C1E5" opacity=".22"/>
+      <text x="1114" y="433" fill="#60C1E5" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">ACTIVE</text>
+      <rect x="254" y="468" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="488" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.49999999999999994"/>
+      <rect x="430" y="488" width="120" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="488" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="488" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="481" width="88" height="24" rx="12" fill="#ffd43b" opacity=".22"/>
+      <text x="1114" y="497" fill="#ffd43b" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">PENDING</text>
+      <rect x="254" y="532" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="552" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.44999999999999996"/>
+      <rect x="430" y="552" width="90" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="552" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="552" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="545" width="88" height="24" rx="12" fill="#60C1E5" opacity=".22"/>
+      <text x="1114" y="561" fill="#60C1E5" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">ACTIVE</text>
+      <rect x="254" y="596" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="616" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.3999999999999999"/>
+      <rect x="430" y="616" width="150" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="616" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="616" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="609" width="88" height="24" rx="12" fill="#60C1E5" opacity=".22"/>
+      <text x="1114" y="625" fill="#60C1E5" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">ACTIVE</text>
+      <rect x="254" y="660" width="976" height="1" fill="#263259"/>
+      <rect x="270" y="680" width="110" height="10" rx="5" fill="#60C1E5" opacity="0.3499999999999999"/>
+      <rect x="430" y="680" width="120" height="10" rx="5" fill="#3b4a70"/>
+      <rect x="660" y="680" width="100" height="10" rx="5" fill="#334163"/>
+      <rect x="900" y="680" width="80" height="10" rx="5" fill="#334163"/>
+      <rect x="1100" y="673" width="88" height="24" rx="12" fill="#60C1E5" opacity=".22"/>
+      <text x="1114" y="689" fill="#60C1E5" font-family="monospace" font-size="10" font-weight="700" letter-spacing="0">ACTIVE</text>
+  <path d="M232 768 H1252" stroke="#2a3558"/>
+  <text x="232" y="790" fill="#5b6f96" font-family="monospace" font-size="10" font-weight="400" letter-spacing="2">LOMOR // ORDER MANAGEMENT</text>
+</svg>

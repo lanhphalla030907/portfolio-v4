@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { portfolioData } from "@/data/portfolioData";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { usePortfolioData } from "@/i18n/usePortfolioData";
 import {
   ArrowUpRight,
   Facebook,
@@ -19,6 +20,8 @@ import {
 } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
+  const { t } = useLanguage();
+  const data = usePortfolioData();
   const [mounted, setMounted] = useState(false);
   const [isManualAura, setIsManualAura] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -197,7 +200,7 @@ const stats = [
         <div className="hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 bg-surface/90 border border-line/20 cut-corner-sm shadow-xs mb-4">
           <span className="w-2.5 h-2.5 rounded-full bg-ink animate-pulse" />
           <span className="text-xs font-mono font-bold tracking-wider text-ink uppercase">
-            Available for Projects
+            {t("Available for Projects")}
           </span>
         </div>
 
@@ -209,7 +212,7 @@ const stats = [
             fontVariationSettings: '"wdth" 75, "opsz" 96',
           }}
         >
-          {portfolioData.personal.name.split(" ").map((word, i) => (
+          {data.personal.name.split(" ").map((word, i) => (
             <span
               key={i}
               className={`block transition-all duration-700 ease-out ${
@@ -227,22 +230,22 @@ const stats = [
           <li className="flex items-center gap-2.5">
             <Briefcase className="w-4 h-4 text-ink shrink-0" />
             <span className="font-semibold text-ink">
-              {portfolioData.personal.heroThesis || "Full-Stack Developer"}
+              {data.personal.heroThesis || t("Full-Stack Developer")}
             </span>
           </li>
           <li className="flex items-center gap-2.5 text-ink-soft">
             <GraduationCap className="w-4 h-4 text-ink shrink-0" />
-            <span>{portfolioData.personal.role}</span>
+            <span>{data.personal.role}</span>
           </li>
           <li className="flex items-center gap-2.5 text-ink-soft">
             <MapPin className="w-4 h-4 text-ink shrink-0" />
-            <span>{portfolioData.personal.location}</span>
+            <span>{data.personal.location}</span>
           </li>
         </ul>
 
         {/* Crisp Short Bio */}
         <p className="hero-bio mt-4 text-sm sm:text-base text-ink-soft leading-relaxed max-w-md">
-          {portfolioData.personal.bio}
+          {data.personal.bio}
         </p>
       </div>
 
@@ -281,7 +284,7 @@ const stats = [
           {/* BASE LAYER: Full image (Real photo by default, or Suit when Aura button clicked) */}
           <img
             src={isManualAura ? "/img/image.png" : "/img/lanh-aura.png"}
-            alt="Lanh Phalla - Developer Portrait"
+            alt={t("Lanh Phalla - Developer Portrait")}
             className="layer-base absolute inset-0 w-full h-full object-contain select-none transition-[filter] duration-500 ease-out"
             style={{
               transform: "translateY(0.8%)",
@@ -358,7 +361,7 @@ const stats = [
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[11px] font-mono tracking-widest text-ink-soft uppercase font-semibold">
-                  {item.label}
+                  {t(item.label)}
                 </span>
                 <Icon className="w-4 h-4 text-ink-soft group-hover:text-ink transition-colors" />
               </div>
@@ -372,7 +375,7 @@ const stats = [
               </div>
 
               <p className="mt-2 text-xs text-ink-soft font-mono">
-                {item.detail}
+                {t(item.detail)}
               </p>
             </div>
           );
@@ -409,14 +412,14 @@ const stats = [
           </span>
           <span>
             <span className="block text-xs uppercase tracking-[0.05em] font-medium">
-              {isManualAura ? "Show portrait" : "Show aura"}
+              {isManualAura ? t("Show portrait") : t("Show aura")}
             </span>
             <span className="hero-mode-hint block text-[11px] text-ink-soft">
               <span className="sm:hidden">
-                {isManualAura ? "Full aura active · Tap to return" : "Touch & drag to reveal · Tap for full suit"}
+                {isManualAura ? t("Full aura active · Tap to return") : t("Touch & drag to reveal · Tap for full suit")}
               </span>
               <span className="hidden sm:inline">
-                {isManualAura ? "Full aura active · Click to return" : "Hover to reveal part · Click for full suit"}
+                {isManualAura ? t("Full aura active · Click to return") : t("Hover to reveal part · Click for full suit")}
               </span>
             </span>
           </span>
@@ -431,14 +434,14 @@ const stats = [
             background: "rgb(var(--v-surface) / 0.85)",
           }}
         >
-          <span>View Projects</span>
+          <span>{t("View Projects")}</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
 
         {/* Right: Social Links */}
         <div className="hero-socials justify-self-end flex items-center gap-6 text-xs uppercase tracking-[0.06em]">
           <a
-            href={portfolioData.contact.github}
+            href={data.contact.github}
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 hover:opacity-100 hover:text-ink transition-all no-underline flex items-center gap-2"
@@ -447,7 +450,7 @@ const stats = [
             <span className="hidden sm:inline">GitHub</span>
           </a>
           <a
-            href={portfolioData.contact.facebook}
+            href={data.contact.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 hover:opacity-100 hover:text-ink transition-all no-underline flex items-center gap-2"
@@ -456,7 +459,7 @@ const stats = [
             <span className="hidden sm:inline">Facebook</span>
           </a>
           <a
-            href={portfolioData.contact.telegram}
+            href={data.contact.telegram}
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 hover:opacity-100 hover:text-ink transition-all no-underline flex items-center gap-2"

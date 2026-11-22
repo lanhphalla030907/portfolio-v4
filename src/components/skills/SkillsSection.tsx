@@ -1,10 +1,15 @@
+"use client";
+
 import React from "react";
-import { portfolioData } from "@/data/portfolioData";
 import { SectionHeader } from "../ui/SectionHeader";
 import { LogoMarquee } from "./LogoMarquee";
 import { Layout, Server, Database, Wrench, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { usePortfolioData } from "@/i18n/usePortfolioData";
 
 export const SkillsSection: React.FC = () => {
+  const { t } = useLanguage();
+  const data = usePortfolioData();
   const columnIcons = [Layout, Server, Database, Wrench];
 
   return (
@@ -12,9 +17,11 @@ export const SkillsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="reveal-on-scroll">
           <SectionHeader
-            tag="TECHNICAL ARSENAL // 02"
-            title="Engineered for scale, resilience, and performance."
-            subtitle="A comprehensive toolkit refined across modern frontend platforms, high-concurrency microservices, databases, and production devops."
+            tag={t("TECHNICAL ARSENAL // 02")}
+            title={t("Engineered for scale, resilience, and performance.")}
+            subtitle={t(
+              "A comprehensive toolkit refined across modern frontend platforms, high-concurrency microservices, databases, and production devops."
+            )}
           />
         </div>
 
@@ -23,7 +30,7 @@ export const SkillsSection: React.FC = () => {
           <div className="flex items-center gap-2 mb-4">
             <span className="w-2 h-2 bg-brand-accent cut-corner-sm" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-accentText font-semibold">
-              Stack in Rotation
+              {t("Stack in Rotation")}
             </span>
           </div>
           <LogoMarquee />
@@ -31,7 +38,7 @@ export const SkillsSection: React.FC = () => {
 
         {/* 4 Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {portfolioData.skills.map((category, idx) => {
+          {data.skills.map((category, idx) => {
             const IconComp = columnIcons[idx % columnIcons.length];
 
             return (
@@ -51,7 +58,7 @@ export const SkillsSection: React.FC = () => {
                         {category.title}
                       </h3>
                       <span className="text-[10px] font-mono text-accentText uppercase tracking-wider font-semibold">
-                        Pillar 0{idx + 1}
+                        {t(`Pillar 0${idx + 1}`)}
                       </span>
                     </div>
                   </div>
@@ -92,9 +99,9 @@ export const SkillsSection: React.FC = () => {
                 <div className="mt-6 pt-3.5 border-t border-line/10 dark:border-line/20 flex items-center justify-between text-[11px] font-mono text-ink-muted">
                   <span className="flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5 text-accentText" />
-                    <span>Verified</span>
+                    <span>{t("Verified")}</span>
                   </span>
-                  <span>{category.skills.length} Techs</span>
+                  <span>{category.skills.length} {t("Techs")}</span>
                 </div>
               </div>
             );
@@ -106,7 +113,7 @@ export const SkillsSection: React.FC = () => {
           <div className="flex items-center gap-2 mb-4">
             <span className="w-2 h-2 bg-brand-accent cut-corner-sm" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-accentText font-semibold">
-              Tools in Motion
+              {t("Tools in Motion")}
             </span>
           </div>
           <LogoMarquee reverse duration={42} />

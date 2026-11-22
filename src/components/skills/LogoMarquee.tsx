@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { portfolioData } from "@/data/portfolioData";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 interface LogoMarqueeProps {
   reverse?: boolean;
@@ -40,11 +43,12 @@ export const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   reverse = false,
   duration = 36,
 }) => {
+  const { t } = useLanguage();
   return (
     <div
       className={`logo-marquee${reverse ? " logo-marquee--reverse" : ""}`}
       role="region"
-      aria-label="Technologies and tools I work with"
+      aria-label={t("Technologies and tools I work with")}
     >
       <div
         className="logo-marquee__track"

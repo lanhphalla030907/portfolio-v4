@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="POS / CONTROL CENTER">
+  
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1430"/>
+      <stop offset="100%" stop-color="#070b1c"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60C1E5" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#60C1E5" stop-opacity=".25"/>
+    </linearGradient>
+  </defs>
+  
+    <rect width="1280" height="800" fill="url(#bg)"/>
+    <rect width="1280" height="800" fill="url(#grid)" opacity=".5"/>
+    <rect x="0" y="0" width="1280" height="56" fill="#0d1430" stroke="#263259"/>
+    <path d="M27 14 H48 V35 L41 42 H20 V21 Z" fill="#60C1E5"/>
+    <text x="60" y="34" fill="#eef3f8" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0">POS / CONTROL CENTER</text>
+    <rect x="470" y="14" width="340" height="28" rx="6" fill="#151f3d" stroke="#2a3558"/>
+    <text x="486" y="33" fill="#6f83a8" font-family="monospace" font-size="12" font-weight="400" letter-spacing="0">app.local / checkout</text>
+    <circle cx="1210" cy="28" r="13" fill="#60C1E5" opacity=".85"/>
+    <circle cx="1244" cy="28" r="13" fill="#2a3558"/>
+    <rect x="0" y="56" width="200" height="744" fill="#0d1430" stroke="#263259"/>
+    
+      <rect x="16" y="84" width="168" height="34" rx="6" fill="#60C1E5" opacity="0.18"/>
+      <rect x="28" y="96" width="8" height="8" rx="2" fill="#60C1E5"/>
+      <text x="46" y="105" fill="#60C1E5" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Overview</text>
+      <rect x="16" y="130" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="142" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="151" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Catalog</text>
+      <rect x="16" y="176" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="188" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="197" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Orders</text>
+      <rect x="16" y="222" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="234" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="243" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Customers</text>
+      <rect x="16" y="268" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="280" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="289" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Reports</text>
+      <rect x="16" y="314" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="326" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="335" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Settings</text>
+    <rect x="16" y="716" width="168" height="60" rx="8" fill="#151f3d" stroke="#2a3558"/>
+    <circle cx="42" cy="746" r="13" fill="#60C1E5" opacity=".3"/>
+    <text x="64" y="742" fill="#c6d4e8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">ADMIN USER</text>
+    <text x="64" y="758" fill="#6f83a8" font-family="monospace" font-size="10" font-weight="400" letter-spacing="0">workspace</text>
+  
+  <path d="M244 84 H1252 V132 L1240 144 H232 V96 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+    <text x="254" y="120" fill="#eef3f8" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0">QUICK CHECKOUT</text>
+    <rect x="1010" y="100" width="110" height="28" rx="6" fill="#60C1E5" opacity=".85"/>
+    <text x="1028" y="119" fill="#0b1026" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">NEW ENTRY</text>
+    <path d="M244 164 H556 V438 L544 450 H232 V176 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+        <path d="M256 178 H542 V318 L532 328 H246 V188 Z" fill="url(#grad)" opacity="0.55"/>
+        <circle cx="394" cy="252" r="42" fill="#0b1026" opacity=".25"/>
+        <path d="M372 260 L394 222 L416 260 Z" fill="#eef3f8" opacity=".35"/>
+        <text x="248" y="358" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Espresso</text>
+        <text x="248" y="380" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Top sellers</text>
+        <text x="248" y="414" fill="#60C1E5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">$29.00</text>
+        <rect x="460" y="396" width="80" height="28" rx="6" fill="#1d2949" stroke="#60C1E5"/>
+        <text x="475" y="415" fill="#60C1E5" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">EDIT</text><path d="M588 164 H900 V438 L888 450 H576 V176 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+        <path d="M600 178 H886 V318 L876 328 H590 V188 Z" fill="url(#grad)" opacity="0.7000000000000001"/>
+        <circle cx="738" cy="252" r="42" fill="#0b1026" opacity=".25"/>
+        <path d="M716 260 L738 222 L760 260 Z" fill="#eef3f8" opacity=".35"/>
+        <text x="592" y="358" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Notebook</text>
+        <text x="592" y="380" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">In stock</text>
+        <text x="592" y="414" fill="#60C1E5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">$46.00</text>
+        <rect x="804" y="396" width="80" height="28" rx="6" fill="#1d2949" stroke="#60C1E5"/>
+        <text x="819" y="415" fill="#60C1E5" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">EDIT</text><path d="M932 164 H1244 V438 L1232 450 H920 V176 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+        <path d="M944 178 H1230 V318 L1220 328 H934 V188 Z" fill="url(#grad)" opacity="0.8500000000000001"/>
+        <circle cx="1082" cy="252" r="42" fill="#0b1026" opacity=".25"/>
+        <path d="M1060 260 L1082 222 L1104 260 Z" fill="#eef3f8" opacity=".35"/>
+        <text x="936" y="358" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Headphones</text>
+        <text x="936" y="380" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Top sellers</text>
+        <text x="936" y="414" fill="#60C1E5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">$63.00</text>
+        <rect x="1148" y="396" width="80" height="28" rx="6" fill="#1d2949" stroke="#60C1E5"/>
+        <text x="1163" y="415" fill="#60C1E5" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">EDIT</text><path d="M244 470 H556 V744 L544 756 H232 V482 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+        <path d="M256 484 H542 V624 L532 634 H246 V494 Z" fill="url(#grad)" opacity="0.55"/>
+        <circle cx="394" cy="558" r="42" fill="#0b1026" opacity=".25"/>
+        <path d="M372 566 L394 528 L416 566 Z" fill="#eef3f8" opacity=".35"/>
+        <text x="248" y="664" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Espresso</text>
+        <text x="248" y="686" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">In stock</text>
+        <text x="248" y="720" fill="#60C1E5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">$80.00</text>
+        <rect x="460" y="702" width="80" height="28" rx="6" fill="#1d2949" stroke="#60C1E5"/>
+        <text x="475" y="721" fill="#60C1E5" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">EDIT</text><path d="M588 470 H900 V744 L888 756 H576 V482 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+        <path d="M600 484 H886 V624 L876 634 H590 V494 Z" fill="url(#grad)" opacity="0.7000000000000001"/>
+        <circle cx="738" cy="558" r="42" fill="#0b1026" opacity=".25"/>
+        <path d="M716 566 L738 528 L760 566 Z" fill="#eef3f8" opacity=".35"/>
+        <text x="592" y="664" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Notebook</text>
+        <text x="592" y="686" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Top sellers</text>
+        <text x="592" y="720" fill="#60C1E5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">$97.00</text>
+        <rect x="804" y="702" width="80" height="28" rx="6" fill="#1d2949" stroke="#60C1E5"/>
+        <text x="819" y="721" fill="#60C1E5" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">EDIT</text><path d="M932 470 H1244 V744 L1232 756 H920 V482 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+        <path d="M944 484 H1230 V624 L1220 634 H934 V494 Z" fill="url(#grad)" opacity="0.8500000000000001"/>
+        <circle cx="1082" cy="558" r="42" fill="#0b1026" opacity=".25"/>
+        <path d="M1060 566 L1082 528 L1104 566 Z" fill="#eef3f8" opacity=".35"/>
+        <text x="936" y="664" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Headphones</text>
+        <text x="936" y="686" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">In stock</text>
+        <text x="936" y="720" fill="#60C1E5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">$114.00</text>
+        <rect x="1148" y="702" width="80" height="28" rx="6" fill="#1d2949" stroke="#60C1E5"/>
+        <text x="1163" y="721" fill="#60C1E5" font-family="monospace" font-size="11" font-weight="700" letter-spacing="0">EDIT</text>
+  <path d="M232 768 H1252" stroke="#2a3558"/>
+  <text x="232" y="790" fill="#5b6f96" font-family="monospace" font-size="10" font-weight="400" letter-spacing="2">POS // CHECKOUT TERMINAL</text>
+</svg>

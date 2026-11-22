@@ -1,9 +1,10 @@
 
 import type { MetadataRoute } from "next";
 import { portfolioData } from "@/data/portfolioData";
+import { siteUrl } from "@/lib/siteConfig";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://lanhphalla.dev";
+  const baseUrl = siteUrl;
 
   const projectUrls = portfolioData.projects.map((project) => ({
     url: `${baseUrl}/projects/${project.id}`,

@@ -2,12 +2,16 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { portfolioData } from "@/data/portfolioData";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { usePortfolioData } from "@/i18n/usePortfolioData";
 
 export const Navbar: React.FC = () => {
   const router = useRouter();
+  const { t } = useLanguage();
+  const data = usePortfolioData();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -99,7 +103,7 @@ export const Navbar: React.FC = () => {
           className="font-display font-extrabold tracking-tight text-ink text-base sm:text-lg flex items-center gap-2 group hover:text-accentText transition-colors"
         >
           <span className="w-2.5 h-2.5 bg-brand-accent cut-corner-sm group-hover:scale-110 transition-transform" />
-          <span>{portfolioData.personal.shortName}</span>
+          <span>{data.personal.shortName}</span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -117,7 +121,7 @@ export const Navbar: React.FC = () => {
                     : "text-ink-soft hover:text-ink hover:bg-night/5"
                 }`}
               >
-                {link.label}
+                {t(link.label)}
               </a>
             );
           })}
@@ -125,13 +129,14 @@ export const Navbar: React.FC = () => {
 
         {/* Right CTA & Mobile Toggle */}
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
           <ThemeToggle />
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
             className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider rounded-full bg-night text-white hover:bg-brand-accent hover:text-night transition-colors duration-200"
           >
-            <span>Contact</span>
+            <span>{t("Contact")}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
 
@@ -139,7 +144,7 @@ export const Navbar: React.FC = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-1.5 text-ink hover:text-accentText rounded-lg transition-colors"
-            aria-label="Toggle menu"
+            aria-label={t("Toggle menu")}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -159,7 +164,7 @@ export const Navbar: React.FC = () => {
               }}
               className="px-4 py-2.5 text-sm font-mono uppercase tracking-wider text-ink hover:bg-night/5 rounded-lg flex items-center justify-between"
             >
-              <span>{link.label}</span>
+              <span>{t(link.label)}</span>
               <span className="text-xs text-accentText">↗</span>
             </a>
           ))}
@@ -171,7 +176,7 @@ export const Navbar: React.FC = () => {
             }}
             className="mt-2 w-full text-center py-3 text-xs font-mono font-bold uppercase tracking-wider rounded-lg bg-night text-white hover:bg-brand-accent hover:text-night transition-colors"
           >
-            Get in touch ↗
+            {t("Get in touch ↗")}
           </a>
         </div>
       )}

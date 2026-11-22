@@ -1,22 +1,33 @@
+"use client";
+
 import React from "react";
-import { portfolioData } from "@/data/portfolioData";
 import { SectionHeader } from "../ui/SectionHeader";
-import { GraduationCap, Award, BookOpen, Check } from "lucide-react";
+import { Award, BookOpen, Check } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { usePortfolioData } from "@/i18n/usePortfolioData";
 
 export const EducationSection: React.FC = () => {
+  const { t } = useLanguage();
+  const data = usePortfolioData();
+
   return (
-    <section id="education" className="py-24 sm:py-32 px-4 sm:px-6 relative bg-paper border-t border-line/8">
+    <section
+      id="education"
+      className="py-24 sm:py-32 px-4 sm:px-6 relative bg-paper border-t border-line/8"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="reveal-on-scroll">
           <SectionHeader
-            tag="ACADEMIC BACKGROUND // 04"
-            title="Theoretical foundations in systems & computation."
-            subtitle="Rigorous academic training in computer science, distributed algorithms, and algorithmic complexity."
+            tag={t("EDUCATION & ACADEMIC JOURNEY // 04")}
+            title={t("Building the foundations of computer science.")}
+            subtitle={t(
+              "My academic journey in Computer Science, developing a strong foundation in programming, software engineering, algorithms, databases, and system design."
+            )}
           />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {portfolioData.education.map((edu, idx) => (
+          {data.education.map((edu, idx) => (
             <div
               key={edu.id}
               data-delay={idx * 100}
@@ -28,12 +39,17 @@ export const EducationSection: React.FC = () => {
 
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-line/10">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 cut-corner-sm bg-night flex items-center justify-center text-white shrink-0">
-                    <GraduationCap className="w-6 h-6 text-brand-accent" />
+                  <div className="w-14 h-14 cut-corner-sm flex items-center justify-center shrink-0 overflow-hidden p-1.5">
+                    <img
+                      src={edu.logoUrl}
+                      alt={`${edu.institution} ${t("logo")}`}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
                   <div>
                     <span className="text-xs font-mono uppercase tracking-widest text-accentText font-semibold">
-                      DEGREE PROGRAM
+                      {edu.degresstype}
                     </span>
                     <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight mt-1">
                       {edu.degree}
@@ -56,7 +72,7 @@ export const EducationSection: React.FC = () => {
                 <div className="md:col-span-6">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-2 flex items-center gap-1.5">
                     <BookOpen className="w-3.5 h-3.5 text-accentText" />
-                    <span>Academic Specialization</span>
+                    <span>{t("Academic Specialization")}</span>
                   </h4>
                   <p className="text-sm text-ink-soft leading-relaxed">
                     {edu.description}
@@ -66,11 +82,14 @@ export const EducationSection: React.FC = () => {
                 <div className="md:col-span-6">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-3 flex items-center gap-1.5">
                     <Award className="w-3.5 h-3.5 text-accentText" />
-                    <span>Key Milestones & Leadership</span>
+                    <span>{t("Key Milestones & Leadership")}</span>
                   </h4>
                   <ul className="space-y-2">
                     {edu.highlights.map((hl, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-sm text-ink-soft">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2.5 text-sm text-ink-soft"
+                      >
                         <span className="w-4 h-4 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-2.5 h-2.5 text-accentText" />
                         </span>

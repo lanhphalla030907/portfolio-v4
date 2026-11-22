@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="TEASJUL / RENTALS">
+  
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1430"/>
+      <stop offset="100%" stop-color="#070b1c"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity=".25"/>
+    </linearGradient>
+  </defs>
+  
+    <rect width="1280" height="800" fill="url(#bg)"/>
+    <rect width="1280" height="800" fill="url(#grid)" opacity=".5"/>
+    <rect x="0" y="0" width="1280" height="56" fill="#0d1430" stroke="#263259"/>
+    <path d="M27 14 H48 V35 L41 42 H20 V21 Z" fill="#a78bfa"/>
+    <text x="60" y="34" fill="#eef3f8" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0">TEASJUL / RENTALS</text>
+    <rect x="470" y="14" width="340" height="28" rx="6" fill="#151f3d" stroke="#2a3558"/>
+    <text x="486" y="33" fill="#6f83a8" font-family="monospace" font-size="12" font-weight="400" letter-spacing="0">app.local / tenant-app</text>
+    <circle cx="1210" cy="28" r="13" fill="#a78bfa" opacity=".85"/>
+    <circle cx="1244" cy="28" r="13" fill="#2a3558"/>
+    <rect x="0" y="56" width="200" height="744" fill="#0d1430" stroke="#263259"/>
+    
+      <rect x="16" y="84" width="168" height="34" rx="6" fill="#a78bfa" opacity="0.18"/>
+      <rect x="28" y="96" width="8" height="8" rx="2" fill="#a78bfa"/>
+      <text x="46" y="105" fill="#a78bfa" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Overview</text>
+      <rect x="16" y="130" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="142" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="151" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Catalog</text>
+      <rect x="16" y="176" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="188" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="197" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Orders</text>
+      <rect x="16" y="222" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="234" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="243" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Customers</text>
+      <rect x="16" y="268" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="280" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="289" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Reports</text>
+      <rect x="16" y="314" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="326" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="335" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Settings</text>
+    <rect x="16" y="716" width="168" height="60" rx="8" fill="#151f3d" stroke="#2a3558"/>
+    <circle cx="42" cy="746" r="13" fill="#a78bfa" opacity=".3"/>
+    <text x="64" y="742" fill="#c6d4e8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">ADMIN USER</text>
+    <text x="64" y="758" fill="#6f83a8" font-family="monospace" font-size="10" font-weight="400" letter-spacing="0">workspace</text>
+  
+  <path d="M458 76 H850 V738 L822 766 H430 V104 Z" fill="#111a36" stroke="#2a3558" stroke-width="1"/>
+    <rect x="452" y="98" width="376" height="646" rx="22" fill="#070b1c" stroke="#2a3558"/>
+    <rect x="566" y="106" width="148" height="14" rx="7" fill="#111a36"/>
+    <rect x="466" y="140" width="344" height="150" rx="12" fill="url(#grad)" opacity=".8"/>
+    <circle cx="638" cy="215" r="44" fill="#0b1026" opacity=".28"/>
+    <text x="486" y="330" fill="#eef3f8" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0">My rental</text>
+    <text x="486" y="354" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Room B-204</text>
+    
+      <rect x="466" y="378" width="344" height="68" rx="10" fill="#141d3a" stroke="#2a3558"/>
+      <circle cx="496" cy="412" r="16" fill="#a78bfa" opacity="0.8"/>
+      <rect x="524" y="400" width="140" height="9" rx="4" fill="#3b4a70"/>
+      <rect x="524" y="418" width="90" height="7" rx="3" fill="#263259"/>
+      <rect x="740" y="404" width="52" height="20" rx="10" fill="#a78bfa" opacity=".25"/>
+      <rect x="466" y="462" width="344" height="68" rx="10" fill="#141d3a" stroke="#2a3558"/>
+      <circle cx="496" cy="496" r="16" fill="#a78bfa" opacity="0.6000000000000001"/>
+      <rect x="524" y="484" width="140" height="9" rx="4" fill="#3b4a70"/>
+      <rect x="524" y="502" width="78" height="7" rx="3" fill="#263259"/>
+      <rect x="740" y="488" width="52" height="20" rx="10" fill="#a78bfa" opacity=".25"/>
+      <rect x="466" y="546" width="344" height="68" rx="10" fill="#141d3a" stroke="#2a3558"/>
+      <circle cx="496" cy="580" r="16" fill="#a78bfa" opacity="0.4"/>
+      <rect x="524" y="568" width="140" height="9" rx="4" fill="#3b4a70"/>
+      <rect x="524" y="586" width="66" height="7" rx="3" fill="#263259"/>
+      <rect x="740" y="572" width="52" height="20" rx="10" fill="#a78bfa" opacity=".25"/>
+    <rect x="466" y="646" width="344" height="76" rx="12" fill="#141d3a" stroke="#2a3558"/>
+    
+      <circle cx="500" cy="676" r="10" fill="#a78bfa"/>
+      <rect x="488" y="694" width="24" height="5" rx="2" fill="#a78bfa"/>
+      <circle cx="580" cy="676" r="10" fill="#2a3558"/>
+      <rect x="568" y="694" width="24" height="5" rx="2" fill="#3b4a70"/>
+      <circle cx="660" cy="676" r="10" fill="#2a3558"/>
+      <rect x="648" y="694" width="24" height="5" rx="2" fill="#3b4a70"/>
+      <circle cx="740" cy="676" r="10" fill="#2a3558"/>
+      <rect x="728" y="694" width="24" height="5" rx="2" fill="#3b4a70"/>
+    <text x="230" y="160" fill="#a78bfa" font-family="monospace" font-size="15" font-weight="700" letter-spacing="0">01 / HOME</text>
+    <text x="230" y="186" fill="#8fa2c4" font-family="monospace" font-size="12" font-weight="400" letter-spacing="0">Contracts &amp; invoices</text>
+    <path d="M360 178 H430" stroke="#a78bfa" stroke-dasharray="4 5"/>
+    <text x="880" y="480" fill="#a78bfa" font-family="monospace" font-size="15" font-weight="700" letter-spacing="0">02 / PAY</text>
+    <text x="880" y="506" fill="#8fa2c4" font-family="monospace" font-size="12" font-weight="400" letter-spacing="0">Pay with KHQR</text>
+    <path d="M850 492 H880" stroke="#a78bfa" stroke-dasharray="4 5"/>
+  <path d="M232 768 H1252" stroke="#2a3558"/>
+  <text x="232" y="790" fill="#5b6f96" font-family="monospace" font-size="10" font-weight="400" letter-spacing="2">TEASJUL // TENANT PORTAL</text>
+</svg>

@@ -15,23 +15,23 @@
 //         <SectionHeader
 //           tag="WHO I AM // 01"
 //           title="Architectural thinking joined with relentless execution."
-//           subtitle={portfolioData.about.headline}
+//           subtitle={data.about.headline}
 //           theme="dark"
 //         />
 
 //         {/* Narrative Columns */}
 //         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 text-slate-300 leading-relaxed text-base sm:text-lg">
 //           <div className="lg:col-span-6 space-y-4">
-//             <p>{portfolioData.about.narrative[0]}</p>
+//             <p>{data.about.narrative[0]}</p>
 //           </div>
 //           <div className="lg:col-span-6 space-y-4">
-//             <p>{portfolioData.about.narrative[1]}</p>
+//             <p>{data.about.narrative[1]}</p>
 //           </div>
 //         </div>
 
 //         {/* 4 Blueprint-Bracketed Cards Grid */}
 //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//           {portfolioData.about.blueprintCards.map((card, idx) => {
+//           {data.about.blueprintCards.map((card, idx) => {
 //             const IconComponent = icons[idx % icons.length];
 //             return (
 //               <div
@@ -68,11 +68,16 @@
 //     </section>
 //   );
 // };
+"use client";
+
 import React from "react";
-import { portfolioData } from "@/data/portfolioData";
 import { Compass, Cpu, GraduationCap, MapPin } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { usePortfolioData } from "@/i18n/usePortfolioData";
 
 export const AboutSection: React.FC = () => {
+  const { t } = useLanguage();
+  const data = usePortfolioData();
   const icons = [GraduationCap, MapPin, Cpu, Compass];
 
   return (
@@ -87,30 +92,30 @@ export const AboutSection: React.FC = () => {
           {/* Left: Tag + Title */}
           <div className="lg:col-span-5 reveal-on-scroll">
             <span className="block text-xs font-mono tracking-[0.25em] text-white/60 uppercase mb-3 font-semibold">
-              Who I Am // 01
+              {t("Who I Am // 01")}
             </span>
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight uppercase text-white">
-              Architectural
+              {t("Architectural")}
               <br />
-              <span className="text-white/50">Thinking.</span>
+              <span className="text-white/50">{t("Thinking.")}</span>
             </h2>
           </div>
 
           {/* Right: Headline + Narrative combined */}
           <div className="lg:col-span-7 lg:pt-4 reveal-on-scroll" data-delay="120">
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-5 font-light">
-              {portfolioData.about.headline}
+              {data.about.headline}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-base text-white/70 leading-relaxed">
-              <p>{portfolioData.about.narrative[0]}</p>
-              <p>{portfolioData.about.narrative[1]}</p>
+              <p>{data.about.narrative[0]}</p>
+              <p>{data.about.narrative[1]}</p>
             </div>
           </div>
         </div>
 
         {/* ═══ BOTTOM: Compact Blueprint Rows ═══ */}
         <div className="border-t border-white/20">
-          {portfolioData.about.blueprintCards.map((card, idx) => {
+          {data.about.blueprintCards.map((card, idx) => {
             const IconComponent = icons[idx % icons.length];
             return (
               <div

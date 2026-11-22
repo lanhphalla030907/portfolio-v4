@@ -1,3 +1,9 @@
+export interface ProjectImage {
+  src: string;
+  label: string;
+  caption: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -7,6 +13,8 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
+  gallery?: ProjectImage[];
+  includes?: string[];
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
@@ -43,8 +51,9 @@ export interface Education {
   period: string;
   description: string;
   highlights: string[];
+  logoUrl?: string;
+  degresstype: string;
 }
-
 export const portfolioData = {
   personal: {
     name: "Lanh Phalla",
@@ -173,6 +182,43 @@ export const portfolioData = {
         "PayWay",
       ],
       image: "/project/clothes.png",
+      gallery: [
+        {
+          src: "/project/gallery/lomor-ecommerce/01.svg",
+          label: "Admin Overview",
+          caption:
+            "Orders, revenue, and fulfillment metrics in a single control center.",
+        },
+        {
+          src: "/project/gallery/lomor-ecommerce/02.svg",
+          label: "Product Catalog",
+          caption: "Product variants, stock levels, and category management.",
+        },
+        {
+          src: "/project/gallery/lomor-ecommerce/03.svg",
+          label: "Order Management",
+          caption:
+            "Fulfillment queue with statuses, totals, and delivery assignment.",
+        },
+        {
+          src: "/project/gallery/lomor-ecommerce/04.svg",
+          label: "Mobile Storefront",
+          caption:
+            "Responsive shopping and checkout experience across devices.",
+        },
+      ],
+
+      includes: [
+        "Secure JWT authentication with refresh-token rotation and session management",
+        "Advanced product variants, category management, and real-time inventory tracking",
+        "Shopping cart, wishlist, address management, and complete checkout workflow",
+        "Flexible coupon system with automatic discounts and free shipping promotions",
+        "PayWay payment integration, Cash on Delivery, and downloadable PDF receipts",
+        "Role-based admin dashboard with product, order, customer, and delivery management",
+        "Delivery assignment, order tracking, and COD collection reconciliation",
+        "Cloudinary integration for product image storage and management",
+      ],
+
       liveUrl: "https://your-lomor-domain.com",
       githubUrl: "https://github.com/your-username/your-lomor-repository",
       featured: true,
@@ -199,13 +245,44 @@ export const portfolioData = {
         "Docker",
       ],
       image: "/project/pos-node.png",
-      images: [
-        "/project/pos-node-1.png",
-        "/project/pos-node-2.png",
-        "/project/pos-node-3.png",
-        "/project/pos-node-4.png",
-        "/project/pos-node-5.png",
+      gallery: [
+        {
+          src: "/project/gallery/pos-node/01.svg",
+          label: "Store Overview",
+          caption: "Daily sales, transactions, and stock alerts at a glance.",
+        },
+        {
+          src: "/project/gallery/pos-node/02.svg",
+          label: "Inventory Control",
+          caption: "Live stock levels with reorder and low-stock indicators.",
+        },
+        {
+          src: "/project/gallery/pos-node/03.svg",
+          label: "Checkout Terminal",
+          caption:
+            "Fast product selection and transactional point-of-sale flow.",
+        },
+        {
+          src: "/project/gallery/pos-node/04.svg",
+          label: "Sales Analytics",
+          caption: "Revenue, basket size, and performance reporting.",
+        },
       ],
+
+      includes: [
+        "Transactional POS checkout with cart management and inventory locking",
+        "Product and category management with barcode generation and search",
+        "Customer membership, purchase history, and discount management",
+        "Supplier management and purchase order processing",
+        "Real-time inventory tracking and stock movement management",
+        "Employee management and role-based access control (RBAC)",
+        "Sales, profit, and inventory analytics dashboards",
+        "Expense management and financial reporting",
+        "In-app notifications and automated low-stock Telegram alerts",
+        "Multi-currency support for USD and KHR",
+        "Responsive point-of-sale interface",
+      ],
+
       liveUrl: "#",
       githubUrl: "#",
       featured: true,
@@ -230,13 +307,55 @@ export const portfolioData = {
         "Full-Stack Development",
       ],
       image: "/project/teasjul.png",
-      images: [
-        "/project/teasjul/t1.jpg",
-        "/project/teasjul/t2.jpg",
-        "/project/teasjul/t3.jpg",
-        "/project/teasjul/t4.jpg",
-        "/project/teasjul/t5.jpg",
+      gallery: [
+        {
+          src: "/project/gallery/teasjul/01.svg",
+          label: "Portfolio Overview",
+          caption:
+            "Occupancy, contracts, and rental activity across properties.",
+        },
+        {
+          src: "/project/gallery/teasjul/02.svg",
+          label: "Tenants & Contracts",
+          caption: "Centralized tenant records, rooms, and lease agreements.",
+        },
+        {
+          src: "/project/gallery/teasjul/03.svg",
+          label: "Invoices & Payments",
+          caption: "Monthly utility invoicing with KHQR payment tracking.",
+        },
+        {
+          src: "/project/gallery/teasjul/04.svg",
+          label: "Tenant Portal",
+          caption: "Self-service access to contracts, invoices, and payments.",
+        },
       ],
+
+      includes: [
+        "Multi-owner rental property management and data isolation",
+        "Super Admin owner account management and access control",
+        "House, room, and reusable room type management",
+        "Cloudinary integration for property and room image storage",
+        "Manager house assignment and permission management",
+        "Tenant management and existing rental data onboarding",
+        "Rental contract creation and management",
+        "Water and electricity meter management",
+        "Monthly utility readings and automated usage calculations",
+        "Historical utility rate management",
+        "Automated monthly invoice generation and item management",
+        "Partial payment support and payment history tracking",
+        "KHQR payment integration through PayWay",
+        "Payment callbacks and transaction verification",
+        "Role-based dashboards for Super Admins, owners, managers, and tenants",
+        "Monthly rental analytics and financial reporting",
+        "PDF invoice and report generation",
+        "Database-backed notification system",
+        "Role-based access control (RBAC)",
+        "Public room listings with Super Admin approval workflow",
+        "AI-powered rental assistant",
+        "Responsive property management interface",
+      ],
+
       liveUrl: "no",
       githubUrl: "YOUR_TEASJUL_GITHUB_URL",
       featured: true,
@@ -260,71 +379,198 @@ export const portfolioData = {
         "RESTful API",
         "JWT Authentication",
       ],
-      image:
-        "/project/pharmacy.png",
+      image: "/project/pharmacy.png",
+      gallery: [
+        {
+          src: "/project/gallery/pos-pharmacy/01.svg",
+          label: "Operations Dashboard",
+          caption: "Prescriptions, daily sales, and expiring stock monitoring.",
+        },
+        {
+          src: "/project/gallery/pos-pharmacy/02.svg",
+          label: "Medicine Inventory",
+          caption:
+            "Batch-level stock control with expiry and supplier tracking.",
+        },
+        {
+          src: "/project/gallery/pos-pharmacy/03.svg",
+          label: "Sales Terminal",
+          caption: "Quick dispensing and point-of-sale checkout workflow.",
+        },
+        {
+          src: "/project/gallery/pos-pharmacy/04.svg",
+          label: "Sales Analytics",
+          caption:
+            "Category performance and revenue reporting for the business.",
+        },
+      ],
+
+      includes: [
+        "Medicine inventory and stock management",
+        "Point-of-sale (POS) system for pharmacy sales",
+        "Supplier management and medicine purchasing",
+        "Medicine category management",
+        "Authentication and role-based authorization",
+        "Staff management and access control",
+        "Sales tracking and reporting",
+        "Dashboard analytics and business performance monitoring",
+      ],
+
       liveUrl: "",
       githubUrl: "",
       featured: true,
     },
 
     {
-      id: "kinetic-3d",
-      title: "Kinetic Interactive Showcase",
-      category: "Creative Coding & 3D WebGL",
-      year: "2025",
+      id: "job-portal",
+      title: "Job Portal Platform",
+      category: "Full-Stack Web Application",
+      year: "2026",
       summary:
-        "Interactive procedural physics simulation running in WebGL canvas.",
+        "Modern recruitment platform connecting employers and job seekers through streamlined hiring workflows.",
       description:
-        "Crafted an interactive physics sandbox rendering 10,000 instanced particle meshes with custom vertex shaders and dynamic audio-reactive ripple effects.",
+        "Developed a full-stack recruitment platform featuring role-based dashboards, Google OAuth authentication, job posting and discovery, application management, and Bakong KHQR payment integration. Built with React and Laravel, supported by a RESTful API and MySQL database.",
       tags: [
-        "Three.js",
-        "GLSL Shaders",
-        "Web Audio API",
-        "TypeScript",
-        "Canvas",
+        "React 18",
+        "Laravel 10",
+        "MySQL 8",
+        "Tailwind CSS",
+        "RESTful API",
+        "JWT Authentication",
+        "Google OAuth 2.0",
+        "Bakong KHQR",
       ],
-      image:
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      liveUrl: "https://example.com/kinetic-3d",
-      githubUrl: "https://github.com/example/kinetic-3d",
+      image: "/project/job.png",
+      gallery: [
+        {
+          src: "/project/gallery/job-portal/01.svg",
+          label: "Job Discovery",
+          caption:
+            "Browse available opportunities with job search, filtering, and detailed job listings.",
+        },
+        {
+          src: "/project/gallery/job-portal/02.svg",
+          label: "Employer Dashboard",
+          caption:
+            "Manage job postings, review applicants, and monitor recruitment activities.",
+        },
+        {
+          src: "/project/gallery/job-portal/03.svg",
+          label: "Application Management",
+          caption:
+            "Track submitted applications and manage recruitment progress through application statuses.",
+        },
+        {
+          src: "/project/gallery/job-portal/04.svg",
+          label: "Payment Integration",
+          caption:
+            "Bakong KHQR payment integration for convenient digital payment processing.",
+        },
+      ],
+
+      includes: [
+        "Google OAuth 2.0 authentication",
+        "Bakong KHQR payment integration",
+        "Role-based authentication and authorization",
+        "Job posting, editing, and management",
+        "Job search, filtering, and discovery",
+        "Job application submission and management",
+        "Employer dashboard and recruitment management",
+        "Admin analytics dashboard and platform monitoring",
+      ],
+
+      liveUrl: "",
+      githubUrl: "",
       featured: false,
     },
-    {
-      id: "pulse-guard",
-      title: "PulseGuard Security Auditor",
-      category: "DevSecOps & CLI Tool",
-      year: "2024",
-      summary:
-        "Automated container vulnerability scanner and compliance reporter.",
-      description:
-        "Command-line utility and GitHub Action that audits multi-stage Docker builds, scans dependency SBOMs against CVE databases, and alerts engineering teams via Webhooks.",
-      tags: ["Python", "Docker API", "GitHub Actions", "CLI", "Security"],
-      image: "/project/portfoliov3.png",
-      liveUrl: "https://example.com/pulse-guard",
-      githubUrl: "https://github.com/example/pulse-guard",
-      featured: false,
-    },
+
+    // {
+    //   id: "pulse-guard",
+    //   title: "PulseGuard Security Auditor",
+    //   category: "DevSecOps & CLI Tool",
+    //   year: "2024",
+    //   summary:
+    //     "Automated container vulnerability scanner and compliance reporter.",
+    //   description:
+    //     "Command-line utility and GitHub Action that audits multi-stage Docker builds, scans dependency SBOMs against CVE databases, and alerts engineering teams via Webhooks.",
+    //   tags: ["Python", "Docker API", "GitHub Actions", "CLI", "Security"],
+    //   image: "/project/portfoliov3.png",
+    //   gallery: [
+    //     {
+    //       src: "/project/gallery/pulse-guard/01.svg",
+    //       label: "CLI Scan Report",
+    //       caption:
+    //         "Dependency graph resolution, SBOM generation, and CVE checks.",
+    //     },
+    //     {
+    //       src: "/project/gallery/pulse-guard/02.svg",
+    //       label: "Security Dashboard",
+    //       caption: "Scan volume, findings, and compliance in one view.",
+    //     },
+    //     {
+    //       src: "/project/gallery/pulse-guard/03.svg",
+    //       label: "Vulnerability Report",
+    //       caption: "Prioritized CVE findings with severity and fix guidance.",
+    //     },
+    //     {
+    //       src: "/project/gallery/pulse-guard/04.svg",
+    //       label: "CI Integration",
+    //       caption: "Automated GitHub Action checks with webhook alerting.",
+    //     },
+    //   ],
+    //   includes: [
+    //     "Multi-stage Docker build auditing",
+    //     "Dependency SBOM generation",
+    //     "CVE database vulnerability scanning",
+    //     "Policy compliance checks",
+    //     "Webhook alerting for engineering teams",
+    //     "GitHub Action integration for CI pipelines",
+    //   ],
+    //   liveUrl: "https://example.com/pulse-guard",
+    //   githubUrl: "https://github.com/example/pulse-guard",
+    //   featured: false,
+    // },
   ] as Project[],
 
-  education: [
-    {
-      id: "edu-1",
-      degree: "Bachelor's Degree in Computer Science",
-      institution: "Royal University of Phnom Penh",
-      location: "Phnom Penh, Cambodia",
-      period: "2025 — Present", // Verify enrollment year
-      description:
-        "Third-year Computer Science student building a strong foundation in software engineering, algorithms, database systems, computer networking, and full-stack web development.",
-      highlights: [
-        "Data Structures, Algorithms, and Object-Oriented Programming",
-        "Database Systems Design, SQL, and Database Management",
-        "Computer Networking, Network Security, and System Administration",
-        "Full-Stack Web Development with Frontend and Backend Technologies",
-        "Software Engineering, Information Systems Analysis, and Design",
-      ],
-    },
-  ] as Education[],
+ education: [
+  {
+    id: "edu-1",
+    degresstype : "DEGREE PROGRAM",
+    degree: "Bachelor's Degree in Computer Science",
+    institution: "Royal University of Phnom Penh",
+    location: "Phnom Penh, Cambodia",
+    period: "2025 — Present", // Verify enrollment year
+    description:
+      "Third-year Computer Science student building a strong foundation in software engineering, algorithms, database systems, computer networking, and full-stack web development.",
+    highlights: [
+      "Data Structures, Algorithms, and Object-Oriented Programming",
+      "Database Systems Design, SQL, and Database Management",
+      "Computer Networking, Network Security, and System Administration",
+      "Full-Stack Web Development with Frontend and Backend Technologies",
+      "Software Engineering, Information Systems Analysis, and Design",
+    ],
+    logoUrl: "/logo/rupp.png",
+  },
 
+  {
+    id: "edu-2",
+    degresstype : "Training Program",
+    degree: "Professional Software Development Training",
+    institution: "ETEC Center",
+    location: "Phnom Penh, Cambodia",
+    period: "2025 — 2026", // Verify actual enrollment period
+    description:
+      "Practical software development training focused on programming fundamentals, modern frontend development, and backend application engineering. Gaining hands-on experience building web applications using C++, React, PHP, Laravel, and Spring Boot.",
+    highlights: [
+      "C++ Programming, Object-Oriented Programming, and Problem Solving",
+      "Frontend Development with HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, and React",
+      "Backend Development with PHP and Laravel Framework",
+      "Java and Spring Boot for RESTful API Development",
+      "Practical Programming Exercises and Project-Based Learning",
+    ],
+    logoUrl: "/logo/etec.png",
+  },
+] as Education[],
   certificates: [
     {
       id: "cert-frontend-internship",

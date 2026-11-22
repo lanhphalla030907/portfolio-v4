@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="PULSEGUARD / SECURITY">
+  
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1430"/>
+      <stop offset="100%" stop-color="#070b1c"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity=".25"/>
+    </linearGradient>
+  </defs>
+  
+    <rect width="1280" height="800" fill="url(#bg)"/>
+    <rect width="1280" height="800" fill="url(#grid)" opacity=".5"/>
+    <rect x="0" y="0" width="1280" height="56" fill="#0d1430" stroke="#263259"/>
+    <path d="M27 14 H48 V35 L41 42 H20 V21 Z" fill="#fbbf24"/>
+    <text x="60" y="34" fill="#eef3f8" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0">PULSEGUARD / SECURITY</text>
+    <rect x="470" y="14" width="340" height="28" rx="6" fill="#151f3d" stroke="#2a3558"/>
+    <text x="486" y="33" fill="#6f83a8" font-family="monospace" font-size="12" font-weight="400" letter-spacing="0">app.local / ci</text>
+    <circle cx="1210" cy="28" r="13" fill="#fbbf24" opacity=".85"/>
+    <circle cx="1244" cy="28" r="13" fill="#2a3558"/>
+    <rect x="0" y="56" width="200" height="744" fill="#0d1430" stroke="#263259"/>
+    
+      <rect x="16" y="84" width="168" height="34" rx="6" fill="#fbbf24" opacity="0.18"/>
+      <rect x="28" y="96" width="8" height="8" rx="2" fill="#fbbf24"/>
+      <text x="46" y="105" fill="#fbbf24" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">Overview</text>
+      <rect x="16" y="130" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="142" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="151" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Catalog</text>
+      <rect x="16" y="176" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="188" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="197" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Orders</text>
+      <rect x="16" y="222" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="234" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="243" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Customers</text>
+      <rect x="16" y="268" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="280" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="289" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Reports</text>
+      <rect x="16" y="314" width="168" height="34" rx="6" fill="#151f3d" opacity="1"/>
+      <rect x="28" y="326" width="8" height="8" rx="2" fill="#5b6f96"/>
+      <text x="46" y="335" fill="#8fa2c4" font-family="Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0">Settings</text>
+    <rect x="16" y="716" width="168" height="60" rx="8" fill="#151f3d" stroke="#2a3558"/>
+    <circle cx="42" cy="746" r="13" fill="#fbbf24" opacity=".3"/>
+    <text x="64" y="742" fill="#c6d4e8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">ADMIN USER</text>
+    <text x="64" y="758" fill="#6f83a8" font-family="monospace" font-size="10" font-weight="400" letter-spacing="0">workspace</text>
+  
+  <path d="M244 84 H852 V442 L840 454 H232 V96 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+    <text x="254" y="120" fill="#eef3f8" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0">CI INTEGRATION</text>
+    <path d="M254 420 H830 M254 340 H830 M254 260 H830 M254 180 H830" stroke="#243354" stroke-dasharray="4 6"/>
+    <polyline points="270,420 330,390 390,410 450,340 510,360 570,280 630,300 690,230 750,260 810,180" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M270 420 L270 420 L330 390 L390 410 L450 340 L510 360 L570 280 L630 300 L690 230 L750 260 L810 180 L810 420 Z" fill="url(#grad)" opacity=".35"/>
+    <circle cx="270" cy="420" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="330" cy="390" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="390" cy="410" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="450" cy="340" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="510" cy="360" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="570" cy="280" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="630" cy="300" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="690" cy="230" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="750" cy="260" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/><circle cx="810" cy="180" r="5" fill="#0b1026" stroke="#fbbf24" stroke-width="3"/>
+    <path d="M884 84 H1252 V442 L1240 454 H872 V96 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+    <text x="894" y="120" fill="#eef3f8" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0">Pipeline results</text>
+    <circle cx="1062" cy="270" r="92" fill="none" stroke="#243354" stroke-width="26"/>
+    <circle cx="1062" cy="270" r="92" fill="none" stroke="#fbbf24" stroke-width="26" stroke-dasharray="400 578" transform="rotate(-90 1062 270)"/>
+    <circle cx="1062" cy="270" r="92" fill="none" stroke="#ffd43b" stroke-width="26" stroke-dasharray="110 578" stroke-dashoffset="-410" transform="rotate(-90 1062 270)"/>
+    <text x="1030" y="278" fill="#eef3f8" font-family="Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0">69%</text>
+    
+      <rect x="900" y="394" width="10" height="10" rx="3" fill="#fbbf24"/>
+      <text x="918" y="403" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Passed</text>
+      <rect x="900" y="394" width="10" height="10" rx="3" fill="#ffd43b"/>
+      <text x="918" y="403" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Failed</text>
+      <rect x="900" y="394" width="10" height="10" rx="3" fill="#243354"/>
+      <text x="918" y="403" fill="#8fa2c4" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Skipped</text>
+    
+      <path d="M244 478 H556 V636 L544 648 H232 V490 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+      <text x="254" y="512" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Build time</text>
+      <text x="254" y="558" fill="#fbbf24" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="0">+24.8%</text>
+      <rect x="254" y="584" width="200" height="8" rx="4" fill="#243354"/>
+      <rect x="254" y="584" width="140" height="8" rx="4" fill="#fbbf24" opacity=".8"/>
+      <path d="M588 478 H900 V636 L888 648 H576 V490 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+      <text x="598" y="512" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Scans / wk</text>
+      <text x="598" y="558" fill="#ffd43b" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="0">8.4 min</text>
+      <rect x="598" y="584" width="170" height="8" rx="4" fill="#243354"/>
+      <rect x="598" y="584" width="120" height="8" rx="4" fill="#fbbf24" opacity=".8"/>
+      <path d="M932 478 H1244 V636 L1232 648 H920 V490 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+      <text x="942" y="512" fill="#7f93b8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Coverage</text>
+      <text x="942" y="558" fill="#fbbf24" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="0">99.2%</text>
+      <rect x="942" y="584" width="140" height="8" rx="4" fill="#243354"/>
+      <rect x="942" y="584" width="100" height="8" rx="4" fill="#fbbf24" opacity=".8"/>
+    <path d="M244 672 H1252 V752 L1240 764 H232 V684 Z" fill="#141d3a" stroke="#2a3558" stroke-width="1"/>
+    <text x="254" y="708" fill="#eef3f8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0">GitHub Action</text>
+    <text x="254" y="732" fill="#6f83a8" font-family="monospace" font-size="11" font-weight="400" letter-spacing="0">Automated compliance checks</text>
+  <path d="M232 768 H1252" stroke="#2a3558"/>
+  <text x="232" y="790" fill="#5b6f96" font-family="monospace" font-size="10" font-weight="400" letter-spacing="2">PULSEGUARD // CI INTEGRATION</text>
+</svg>

@@ -5,13 +5,20 @@ import Link from "next/link";
 import { portfolioData } from "@/data/portfolioData";
 import { SectionHeader } from "../ui/SectionHeader";
 import { ArrowUpRight, Github, Code, Sparkles } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { usePortfolioData } from "@/i18n/usePortfolioData";
 
 export const ProjectsSection: React.FC = () => {
   const [filter, setFilter] = useState<string>("ALL");
+  const { t } = useLanguage();
+  const data = usePortfolioData();
 
   const categories = ["ALL", "FULL-STACK", "SYSTEMS", "AI & TOOLS"];
 
-  const filteredProjects = portfolioData.projects.filter((p) => {
+  // Filtering keeps using the original English categories so switching
+  // language never changes which projects a filter matches.
+  const filteredProjects = data.projects.filter((_, index) => {
+    const p = portfolioData.projects[index];
     if (filter === "ALL") return true;
     if (filter === "FULL-STACK") return p.category.toLowerCase().includes("full-stack") || p.category.toLowerCase().includes("ui");
     if (filter === "SYSTEMS") return p.category.toLowerCase().includes("systems") || p.category.toLowerCase().includes("storage");
@@ -24,9 +31,11 @@ export const ProjectsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
           <SectionHeader
-            tag="CURATED WORK // 03"
-            title="Featured projects & production platforms."
-            subtitle="Engineered systems, distributed tools, and digital experiences built for performance and durability."
+            tag={t("CURATED WORK // 03")}
+            title={t("Featured projects & production platforms.")}
+            subtitle={t(
+              "Engineered systems, distributed tools, and digital experiences built for performance and durability."
+            )}
             className="mb-0"
           />
 
@@ -42,7 +51,7 @@ export const ProjectsSection: React.FC = () => {
                     : "text-ink-soft hover:text-ink hover:bg-night/5"
                 }`}
               >
-                {cat}
+                {t(cat)}
               </button>
             ))}
           </div>
@@ -72,7 +81,7 @@ export const ProjectsSection: React.FC = () => {
                     {project.featured && (
                       <span className="px-2 py-0.5 text-[10px] font-mono tracking-widest uppercase bg-brand-yellow text-night font-bold rounded-sm flex items-center gap-1">
                         <Sparkles className="w-2.5 h-2.5" />
-                        <span>Featured</span>
+                        <span>{t("Featured")}</span>
                       </span>
                     )}
                   </div>
@@ -119,7 +128,7 @@ export const ProjectsSection: React.FC = () => {
                   href={`/projects/${project.id}`}
                   className="text-xs font-mono font-semibold uppercase tracking-wider text-ink hover:text-accentText transition-colors flex items-center gap-1.5"
                 >
-                  <span>View Details</span>
+                  <span>{t("View Details")}</span>
                   <Code className="w-3.5 h-3.5" />
                 </Link>
 
@@ -130,7 +139,7 @@ export const ProjectsSection: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 text-ink-soft hover:text-ink rounded-sm hover:bg-paper transition-colors"
-                      title="View GitHub Source"
+                      title={t("View GitHub Source")}
                     >
                       <Github className="w-4 h-4" />
                     </a>
@@ -143,7 +152,7 @@ export const ProjectsSection: React.FC = () => {
                       rel="noopener noreferrer"
                       className="cut-corner-sm px-3.5 py-1.5 bg-night text-white hover:bg-brand-accent hover:text-night dark:bg-brand-accent dark:text-night dark:hover:bg-brand-accentHover font-mono text-xs uppercase tracking-wider font-semibold transition-all inline-flex items-center gap-1.5"
                     >
-                      <span>Live Site</span>
+                      <span>{t("Live Site")}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   )}

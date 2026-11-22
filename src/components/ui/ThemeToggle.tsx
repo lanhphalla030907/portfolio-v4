@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 import { Moon, Sun } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 type Theme = "light" | "dark";
 
@@ -11,6 +12,7 @@ type ViewTransitionDocument = Document & {
 };
 
 export const ThemeToggle: React.FC = () => {
+  const { t } = useLanguage();
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
@@ -74,8 +76,10 @@ export const ThemeToggle: React.FC = () => {
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={
+        isDark ? t("Switch to light mode") : t("Switch to dark mode")
+      }
+      title={isDark ? t("Switch to light mode") : t("Switch to dark mode")}
       style={{ ["viewTransitionName" as string]: "theme-toggle" }}
       className="relative flex h-9 w-[68px] shrink-0 items-center justify-between rounded-full border border-line/15 bg-surface/80 px-1.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-brand-accent/50 active:scale-95"
     >
